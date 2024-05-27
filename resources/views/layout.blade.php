@@ -133,7 +133,7 @@
                 <!-- Collect the nav links, forms, and other content for toggling -->
                 <div class="collapse navbar-collapse" id="navbar-menu">
                     <ul class="nav navbar-nav ml-auto" data-in="fadeInDown" data-out="fadeOutUp" >
-                        <li class="nav-item active"><a class="nav-link" style="color: #ed6f21"  href="index">Home</a></li>
+                        <li class="nav-item active"><a class="nav-link" style="color: #ed6f21"  href="home">Home</a></li>
                         <li class="nav-item"><a class="nav-link" style="color: #ed6f21" href="about">About Us</a></li>
                         <!-- <li class="dropdown">
                             <a href="#" class="nav-link dropdown-toggle arrow" data-toggle="dropdown" >products</a>

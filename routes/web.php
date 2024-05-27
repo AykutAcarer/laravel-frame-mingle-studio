@@ -11,9 +11,11 @@ Route::get('/', function () {
     ]);
 });
 
+//About Page
 Route::get('/about', function(){
     return view('about');
 });
+
 
 //All Products
 Route::get('/products', function () {
@@ -28,4 +30,9 @@ Route::get('/products/{id}', function($id){
     return view('product',[
         'product'=>Product::find($id)
     ]);
+});
+
+//Contact Page
+Route::get('/contact', function(){
+    return view('contact');
 });
