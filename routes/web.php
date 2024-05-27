@@ -41,3 +41,8 @@ Route::get('/contact', function(){
 Route::get('/login', function(){
     return view('login');
 });
+
+//Register Page
+Route::get('/register', function(){
+    return view('register');
+});
