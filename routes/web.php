@@ -11,6 +11,10 @@ Route::get('/', function () {
     ]);
 });
 
+Route::get('/about', function(){
+    return view('about');
+});
+
 //All Products
 Route::get('/products', function () {
     return view('products', [

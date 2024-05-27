@@ -157,7 +157,7 @@
                     <ul>
                         <li class="search"><a href="#"><i class="fa fa-search"></i></a></li>
                         <li class="nav-item">
-							<a href="cart/?product_id=newCart" style="color: #ed6f21">
+							<a href="" style="color: #ed6f21">
 								<p><i class="fa fa-shopping-bag"></i> My Cart</p>
 							</a>
 						</li>
