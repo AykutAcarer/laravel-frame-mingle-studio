@@ -17,7 +17,7 @@ Route::get('/about', function(){
 });
 
 
-//All Products
+//Products page - All Products
 Route::get('/products', function () {
     return view('products', [
         'products' => Product::all()
@@ -25,7 +25,7 @@ Route::get('/products', function () {
     ]);
 });
 
-//Single product
+//Single Product Page
 Route::get('/products/{id}', function($id){
     return view('product',[
         'product'=>Product::find($id)
@@ -35,4 +35,9 @@ Route::get('/products/{id}', function($id){
 //Contact Page
 Route::get('/contact', function(){
     return view('contact');
+});
+
+//Login Page
+Route::get('/login', function(){
+    return view('login');
 });

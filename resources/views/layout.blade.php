@@ -67,13 +67,13 @@
                 <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 d-flex flex-row-reverse">
 					<div class="our-link">
                         <ul class="">
-                            {{-- <?php if(!isset($_SESSION["firstname"])) :?> --}}
+                            {{-- if(!isset($_SESSION["firstname"])) :?> --}}
                                 <li><a href="register"><i class="fa fa-user s_color" ></i> Register</a></li>
                                 <li><a href="login"><i class="fas fa-location-arrow"></i> Login</a></li>
-                            {{-- <?php else:?>     --}}
-                                <li>Welcome {{--<?=$_SESSION['firstname']?><?=$_SESSION['lastname']?>--}}</li>
-                                <li><a href="logout"><i class="fas fa-location-arrow"></i> Logout</a></li>
-                            {{-- <?php endif;?> --}}
+                            {{-- else:?>     --}}
+                                {{-- <li>Welcome $_SESSION['firstname']?>$_SESSION['lastname']</li> --}}
+                                {{-- <li><a href="logout"><i class="fas fa-location-arrow"></i> Logout</a></li> --}}
+                            {{--endif;?> --}}
                         </ul>
 						<!-- <select id="basic" class="selectpicker show-tick form-control" data-placeholder="Sign In"  >
 							<option >Register Here</option>
@@ -133,7 +133,7 @@
                 <!-- Collect the nav links, forms, and other content for toggling -->
                 <div class="collapse navbar-collapse" id="navbar-menu">
                     <ul class="nav navbar-nav ml-auto" data-in="fadeInDown" data-out="fadeOutUp" >
-                        <li class="nav-item active"><a class="nav-link" style="color: #ed6f21"  href="home">Home</a></li>
+                        <li class="nav-item active"><a class="nav-link" style="color: #ed6f21"  href="/laravel-frame-mingle-studio/public">Home</a></li>
                         <li class="nav-item"><a class="nav-link" style="color: #ed6f21" href="about">About Us</a></li>
                         <!-- <li class="dropdown">
                             <a href="#" class="nav-link dropdown-toggle arrow" data-toggle="dropdown" >products</a>
