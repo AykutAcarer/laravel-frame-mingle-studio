@@ -46,3 +46,8 @@ Route::get('/login', function(){
 Route::get('/register', function(){
     return view('register');
 });
+
+//Cart Page
+Route::get('/cart', function(){
+    return view('cart');
+});

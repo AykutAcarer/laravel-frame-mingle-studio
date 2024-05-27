@@ -37,8 +37,8 @@
                                 </tr>
                             </thead>
                             <tbody>
-                                <?php
-                                    foreach($products as $item)
+                                
+                                    {{-- foreach($products as $item)
                                     {
                                         //get just first image of each products in order to show product list
                                         $firstImageUrl = isset($item['images'][0]['images_url']) ? $item['images'][0]['images_url'] : null;
@@ -69,8 +69,8 @@
                                                 </td>
                                             </tr>
                                         ';
-                                    }
-                                ?>
+                                    } --}}
+                                
                             </tbody>
                         </table>
                     </div>

@@ -96,7 +96,7 @@
                                                                 <li><a href="products/{{$product['id']}}" data-toggle="tooltip" data-placement="right" title="View"><i class="fas fa-eye"></i></a></li>
                                                                 <li><a href="#" data-toggle="tooltip" data-placement="right" title="Add to Wishlist"><i class="far fa-heart"></i></a></li>
                                                             </ul>
-                                                            <a class="cart" href="">Add to Cart</a>
+                                                            <a class="cart" href="cart">Add to Cart</a>
                                                         </div>
                                                     </div>
                                                     <div class="why-text">
@@ -142,7 +142,7 @@
                                                             <h4>{{$product['product_name']}}</h4>
                                                             <h5> <del>${{$product['product_preis_from']}}</del> ${{$product['product_preis_now']}}</h5>
                                                             <p>{{$product['product_description']}}</p>
-                                                            <a class="btn hvr-hover" href="">Add to Cart</a>
+                                                            <a class="btn hvr-hover" href="cart">Add to Cart</a>
                                                         </div>
                                                     </div>
                                                 </div>
