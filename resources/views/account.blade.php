@@ -1,6 +1,4 @@
-@extends('layout')
-
-@section('content')
+<x-layout>
 
     <!-- Start All Title Box -->
     <div class="all-title-box">
@@ -196,4 +194,4 @@
     </div>
     <!-- End My Account -->
 
-    @endsection
+</x-layout>

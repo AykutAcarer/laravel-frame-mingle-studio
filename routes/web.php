@@ -17,6 +17,7 @@ Route::get('/about', function(){
 });
 
 
+
 //Products page - All Products
 Route::get('/products', function () {
     return view('products', [
@@ -27,10 +28,15 @@ Route::get('/products', function () {
 
 //Single Product Page
 Route::get('/products/{id}', function($id){
-    return view('product',[
-        'product'=>Product::find($id)
+
+    return view('show',[
+        'product'=> Product::find($id)
     ]);
+    
+    
+    
 });
+
 
 //Contact Page
 Route::get('/contact', function(){

@@ -16,17 +16,51 @@
     <meta name="author" content="">
 
     <!-- Site Icons -->
-    <link rel="shortcut icon" href="/images/favicon.ico" type="image/x-icon">
-    <link rel="apple-touch-icon" href="/images/apple-touch-icon.png">
+    <link rel="shortcut icon" href={{asset('images/favicon.ico')}} type="image/x-icon">
+    <link rel="apple-touch-icon" href={{asset('images/apple-touch-icon.png')}}>
 
-    <!-- Bootstrap CSS -->
+    @vite(['resources/css/all.css',
+    'resources/css/responsive.css', 
+    'resources/css/style.css', 
+    'resources/css/animate.css', 
+    'resources/css/app.css', 
+    'resources/css/baguetteBox.min.css', 
+    'resources/css/bootsnav.css', 
+    'resources/css/bootstrap-select.css', 
+    'resources/css/bootstrap.min.css', 
+    'resources/css/carousel-ticker.css', 
+    'resources/css/code_animate.css', 
+    'resources/css/custom.css', 
+    'resources/css/jquery-ui.css', 
+    'resources/css/owl.carousel.min.css', 
+    'resources/css/superslides.css', 
+    'resources/js/app.js',
+    'resources/js/baguetteBox.min.js',
+    'resources/js/bootsnav.js',
+    'resources/js/bootstrap-select.js',
+    'resources/js/bootstrap.js',
+    'resources/js/bootstrap.min.js',
+    'resources/js/contact-form-script.js',
+    'resources/js/custom.js',
+    'resources/js/form-validator.min.js',
+    'resources/js/images-loded.min.js',
+    'resources/js/inewsticker.js',
+    'resources/js/isotope.min.js',
+    'resources/js/jquery-3.2.1.min.js',
+    'resources/js/jquery-ui.js',
+    'resources/js/jquery.nicescroll.min.js',
+    'resources/js/jquery.superslides.min.js',
+    'resources/js/owl.carousel.min.js',
+    'resources/js/popper.min.js'])
+
+    {{-- <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="../resources/css/bootstrap.min.css">
     <!-- Site CSS -->
     <link rel="stylesheet" href="../resources/css/style.css">
     <!-- Responsive CSS -->
     <link rel="stylesheet" href="../resources/css/responsive.css">
     <!-- Custom CSS -->
-    <link rel="stylesheet" href="../resources/css/custom.css">
+    <link rel="stylesheet" href="../resources/css/custom.css"> --}}
 
     <!-- [if lt IE 9]> 
       <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
@@ -209,6 +243,7 @@
             <div class="input-group">
                 <span class="input-group-addon"><i class="fa fa-search"></i></span>
                 <input type="text" class="form-control" placeholder="Search">
+                
                 <span class="input-group-addon close-search"><i class="fa fa-times"></i></span>
             </div>
         </div>
@@ -218,7 +253,7 @@
 
 
     {{--MAIN--}}
-    @yield('content')
+    {{$slot}}
 
 
     <!-- Start Instagram Feed  -->
@@ -226,7 +261,15 @@
         <div class="main-instagram owl-carousel owl-theme">
             <div class="item">
                 <div class="ins-inner-box">
-                    <img src="images/instagram-img-01.jpg" alt="" />
+                    <img src={{asset('images/instagram-img-01.jpg')}} alt="" />
+                    <div class="hov-in">
+                        <a href=""><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="item">
+                <div class="ins-inner-box">
+                    <img src={{asset('images/instagram-img-02.jpg')}} alt="" />
                     <div class="hov-in">
                         <a href="#"><i class="fab fa-instagram"></i></a>
                     </div>
@@ -234,7 +277,7 @@
             </div>
             <div class="item">
                 <div class="ins-inner-box">
-                    <img src="images/instagram-img-02.jpg" alt="" />
+                    <img src={{asset('images/instagram-img-03.jpg')}} alt="" />
                     <div class="hov-in">
                         <a href="#"><i class="fab fa-instagram"></i></a>
                     </div>
@@ -242,7 +285,7 @@
             </div>
             <div class="item">
                 <div class="ins-inner-box">
-                    <img src="images/instagram-img-03.jpg" alt="" />
+                    <img src={{asset('images/instagram-img-04.jpg')}} alt="" />
                     <div class="hov-in">
                         <a href="#"><i class="fab fa-instagram"></i></a>
                     </div>
@@ -250,7 +293,7 @@
             </div>
             <div class="item">
                 <div class="ins-inner-box">
-                    <img src="images/instagram-img-04.jpg" alt="" />
+                    <img src={{asset('images/instagram-img-05.jpg')}} alt="" />
                     <div class="hov-in">
                         <a href="#"><i class="fab fa-instagram"></i></a>
                     </div>
@@ -258,7 +301,7 @@
             </div>
             <div class="item">
                 <div class="ins-inner-box">
-                    <img src="images/instagram-img-05.jpg" alt="" />
+                    <img src={{asset('images/instagram-img-06.jpg')}} alt="" />
                     <div class="hov-in">
                         <a href="#"><i class="fab fa-instagram"></i></a>
                     </div>
@@ -266,7 +309,7 @@
             </div>
             <div class="item">
                 <div class="ins-inner-box">
-                    <img src="images/instagram-img-06.jpg" alt="" />
+                    <img src={{ asset('images/instagram-img-07.jpg') }} alt="" />
                     <div class="hov-in">
                         <a href="#"><i class="fab fa-instagram"></i></a>
                     </div>
@@ -274,7 +317,7 @@
             </div>
             <div class="item">
                 <div class="ins-inner-box">
-                    <img src="images/instagram-img-07.jpg" alt="" />
+                    <img src={{asset('images/instagram-img-08.jpg')}} alt="" />
                     <div class="hov-in">
                         <a href="#"><i class="fab fa-instagram"></i></a>
                     </div>
@@ -282,7 +325,7 @@
             </div>
             <div class="item">
                 <div class="ins-inner-box">
-                    <img src="images/instagram-img-08.jpg" alt="" />
+                    <img src={{asset('images/instagram-img-09.jpg')}} alt="" />
                     <div class="hov-in">
                         <a href="#"><i class="fab fa-instagram"></i></a>
                     </div>
@@ -290,15 +333,7 @@
             </div>
             <div class="item">
                 <div class="ins-inner-box">
-                    <img src="images/instagram-img-09.jpg" alt="" />
-                    <div class="hov-in">
-                        <a href="#"><i class="fab fa-instagram"></i></a>
-                    </div>
-                </div>
-            </div>
-            <div class="item">
-                <div class="ins-inner-box">
-                    <img src="images/instagram-img-05.jpg" alt="" />
+                    <img src={{asset('images/instagram-img-05.jpg')}} alt="" />
                     <div class="hov-in">
                         <a href="#"><i class="fab fa-instagram"></i></a>
                     </div>
@@ -403,7 +438,8 @@
 
     <a href="#" id="back-to-top" title="Back to top" style="display: none;">&uarr;</a>
 
-    <!-- ALL JS FILES -->
+    
+    {{-- <!-- ALL JS FILES -->
     <script src="../resources/js/jquery-3.2.1.min.js"></script>
     <script src="../resources/js/popper.min.js"></script>
     <script src="../resources/js/bootstrap.min.js"></script>
@@ -418,7 +454,7 @@
     <script src="../resources/js/baguetteBox.min.js"></script>
     <script src="../resources/js/form-validator.min.js"></script>
     <script src="../resources/js/contact-form-script.js"></script>
-    <script src="../resources/js/custom.js"></script>
+    <script src="../resources/js/custom.js"></script> --}}
     
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script>

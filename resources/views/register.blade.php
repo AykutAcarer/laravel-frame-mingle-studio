@@ -1,6 +1,4 @@
-@extends('layout')
-
-@section('content')
+<x-layout>
 
     <!-- Start All Title Box -->
     <div class="all-title-box">
@@ -279,4 +277,4 @@
     <!-- End Cart -->
 
    
-@endsection
+</x-layout>
