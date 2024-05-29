@@ -2,63 +2,39 @@
 
 use App\Models\Product;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\CartController;
+use App\Http\Controllers\HomeController;
+use App\Http\Controllers\UserController;
+use App\Http\Controllers\AboutController;
+use App\Http\Controllers\AccountController;
+use App\Http\Controllers\ContactController;
+use App\Http\Controllers\ProductController;
 
-//Home Page
-Route::get('/', function () {
-    return view('home', [
-        'products' => Product::all()
-        
-    ]);
-});
+//Show Home Page
+Route::get('/', [HomeController::class, 'index'])->name('home');
 
-//About Page
-Route::get('/about', function(){
-    return view('about');
-});
+//Show About Page
+Route::get('/about', [AboutController::class, 'index'])->name('about') ;
 
+//Show Products page and Get All Products
+Route::get('/products', [ProductController::class, 'showAll'])->name('products');
 
+//Show Single Product Page and get Data for Product
+Route::get('/products/{product}', [ProductController::class, 'showSingle'])->name('show');
 
-//Products page - All Products
-Route::get('/products', function () {
-    return view('products', [
-        'products' => Product::all()
-        
-    ]);
-});
+//Show Contact Page
+Route::get('/contact', [ContactController::class, 'index'])->name('contact');
 
-//Single Product Page
-Route::get('/products/{id}', function($id){
+//Show Login Page
+Route::get('/login', [UserController::class, 'showLogin'])->name('login');
 
-    return view('show',[
-        'product'=> Product::find($id)
-    ]);
-    
-    
-    
-});
+//Show Register Page
+Route::get('/register', [UserController::class, 'showRegister'])->name('register');
 
+//Create New User
 
-//Contact Page
-Route::get('/contact', function(){
-    return view('contact');
-});
+//Show Cart Page
+Route::get('/cart', [CartController::class, 'index'])->name('cart');
 
-//Login Page
-Route::get('/login', function(){
-    return view('login');
-});
-
-//Register Page
-Route::get('/register', function(){
-    return view('register');
-});
-
-//Cart Page
-Route::get('/cart', function(){
-    return view('cart');
-});
-
-//Account Page
-Route::get('/account', function(){
-    return view('account');
-});
+//Show Account Page
+Route::get('/account', [AccountController::class, 'index'])->name('account');

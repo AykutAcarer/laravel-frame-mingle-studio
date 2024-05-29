@@ -38,24 +38,48 @@
                         <h3>Create New Account</h3>
                     </div>
                     <!-- <h5><a data-toggle="collapse" href="#formRegister" role="button" aria-expanded="false">Click here to Register</a></h5> -->
-                    <form class="mt-3 review-form-box" id="formRegister" method="post">
+                    <form class="mt-3 review-form-box" id="formRegister" method="POST">
+                        @csrf
                         <div class="form-row">
                             <div class="form-group col-md-6">
                                 <label for="firstname" class="mb-0">First Name</label>
-                                <input type="text" name="firstname" class="form-control" id="InputName" placeholder=""> </div>
+                                <input type="text" name="firstname" class="form-control" id="InputName" placeholder=""> 
+                                @error('firstname')
+                                    <p class="text-red-500 text-xs mt-1">{{$message}}</p>
+                                @enderror
+                            </div>
                             <div class="form-group col-md-6">
                                 <label for="lastname" class="mb-0">Last Name</label>
-                                <input type="text" name="lastname" class="form-control" id="InputLastname" placeholder=""> </div>
+                                <input type="text" name="lastname" class="form-control" id="InputLastname" placeholder=""> 
+                                @error('lastname')
+                                    <p class="text-red-500 text-xs mt-1">{{$message}}</p>
+                                @enderror
+                            </div>
                             <div class="form-group col-md-6">
                                 <label for="InputEmail1" class="mb-0">Email Address</label>
-                                <input type="email" name="email" class="form-control" id="InputEmail1" placeholder=""> </div>
+                                <input type="email" name="email" class="form-control" id="InputEmail1" placeholder=""> 
+                                @error('email')
+                                    <p class="text-red-500 text-xs mt-1">{{$message}}</p>
+                                @enderror
+                            </div>
                             <div class="form-group col-md-6">
                                 <label for="InputPassword1" class="mb-0">Password</label>
-                                <input type="password" name="password" class="form-control" id="InputPassword1" placeholder=""> </div>
+                                <input type="password" name="password" class="form-control" id="InputPassword1" placeholder=""> 
+                                @error('password')
+                                    <p class="text-red-500 text-xs mt-1">{{$message}}</p>
+                                @enderror
+                            </div>
+                            <div class="form-group col-md-6">
+                                <label for="InputPassword2" class="mb-0">Confirm Password</label>
+                                <input type="password" name="password_confirmation" class="form-control" id="InputPassword2" placeholder=""> 
+                                @error('password_confirmation')
+                                    <p class="text-red-500 text-xs mt-1">{{$message}}</p>
+                                @enderror
+                            </div>
                         </div>
                         <button class="btn hvr-hover">Register</button>
                     </form>
-                    <p class="message">Already registered? <a href="login">Login</a></p>
+                    <p class="message">Already registered? <a href={{route('login')}}>Login</a></p>
                 </div>
             </div>
             <!-- <div class="row">

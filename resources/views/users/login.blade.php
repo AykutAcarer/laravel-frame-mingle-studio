@@ -32,7 +32,7 @@
                         </div>
                         <button class="btn hvr-hover">Login</button>
                     </form>
-                    <p class="message">Not registered? <a href="register">Register</a></p>
+                    <p class="message">Not registered? <a href={{route('register')}}>Register</a></p>
                 </div>
                 <!-- <div class="col-sm-6 col-lg-6 mb-3">
                     <div class="title-left">

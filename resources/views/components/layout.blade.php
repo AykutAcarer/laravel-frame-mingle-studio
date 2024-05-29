@@ -92,9 +92,9 @@
                     </div> -->
                     <div class="our-link">
                         <ul>
-                            <li><a href="account"><i class="fa fa-user s_color" ></i> My Account</a></li>
+                            <li><a href={{route('account')}}><i class="fa fa-user s_color" ></i> My Account</a></li>
                             <li><a href="#"><i class="fas fa-location-arrow"></i> Our location</a></li>
-                            <li><a href="contact"><i class="fas fa-headset"></i> Contact Us</a></li>
+                            <li><a href={{route('contact')}}><i class="fas fa-headset"></i> Contact Us</a></li>
                         </ul>
                     </div>
                 </div>
@@ -102,8 +102,8 @@
 					<div class="our-link">
                         <ul class="">
                             {{-- if(!isset($_SESSION["firstname"])) :?> --}}
-                                <li><a href="register"><i class="fa fa-user s_color" ></i> Register</a></li>
-                                <li><a href="login"><i class="fas fa-location-arrow"></i> Login</a></li>
+                                <li><a href={{route('register')}}><i class="fa fa-user s_color" ></i> Register</a></li>
+                                <li><a href={{route('login')}}><i class="fas fa-location-arrow"></i> Login</a></li>
                             {{-- else:?>     --}}
                                 {{-- <li>Welcome $_SESSION['firstname']?>$_SESSION['lastname']</li> --}}
                                 {{-- <li><a href="logout"><i class="fas fa-location-arrow"></i> Logout</a></li> --}}
@@ -167,8 +167,8 @@
                 <!-- Collect the nav links, forms, and other content for toggling -->
                 <div class="collapse navbar-collapse" id="navbar-menu">
                     <ul class="nav navbar-nav ml-auto" data-in="fadeInDown" data-out="fadeOutUp" >
-                        <li class="nav-item active"><a class="nav-link" style="color: #ed6f21"  href="/laravel-frame-mingle-studio/public">Home</a></li>
-                        <li class="nav-item"><a class="nav-link" style="color: #ed6f21" href="about">About Us</a></li>
+                        <li class="nav-item active"><a class="nav-link" style="color: #ed6f21"  href={{route('home')}}>Home</a></li>
+                        <li class="nav-item"><a class="nav-link" style="color: #ed6f21" href={{route('about')}}>About Us</a></li>
                         <!-- <li class="dropdown">
                             <a href="#" class="nav-link dropdown-toggle arrow" data-toggle="dropdown" >products</a>
                             <ul class="dropdown-menu">
@@ -180,8 +180,8 @@
                                 <li><a href="wishlist.html" >Wishlist</a></li>
                             </ul>
                         </li> -->
-                        <li class="nav-item"><a class="nav-link" href="products" style="color: #ed6f21">Products</a></li>
-                        <li class="nav-item"><a class="nav-link" href="contact" style="color: #ed6f21">Contact Us</a></li>
+                        <li class="nav-item"><a class="nav-link" href={{route('products')}} style="color: #ed6f21">Products</a></li>
+                        <li class="nav-item"><a class="nav-link" href={{route('contact')}} style="color: #ed6f21">Contact Us</a></li>
                     </ul>
                 </div>
                 <!-- /.navbar-collapse -->
@@ -191,7 +191,7 @@
                     <ul>
                         <li class="search"><a href="#"><i class="fa fa-search"></i></a></li>
                         <li class="nav-item">
-							<a href="cart" style="color: #ed6f21">
+							<a href={{route('cart')}} style="color: #ed6f21">
 								<p><i class="fa fa-shopping-bag"></i> My Cart</p>
 							</a>
 						</li>
