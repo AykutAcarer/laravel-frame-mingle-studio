@@ -101,13 +101,13 @@
                 <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 d-flex flex-row-reverse">
 					<div class="our-link">
                         <ul class="">
-                            {{-- if(!isset($_SESSION["firstname"])) :?> --}}
+                            @if(auth()->user())
+                                <li style="color:aliceblue">Welcome {{auth()->user()->name}}</li>
+                                <li><a href="#"><i class="fas fa-location-arrow"></i> Logout</a></li>
+                            @else
                                 <li><a href={{route('register')}}><i class="fa fa-user s_color" ></i> Register</a></li>
                                 <li><a href={{route('login')}}><i class="fas fa-location-arrow"></i> Login</a></li>
-                            {{-- else:?>     --}}
-                                {{-- <li>Welcome $_SESSION['firstname']?>$_SESSION['lastname']</li> --}}
-                                {{-- <li><a href="logout"><i class="fas fa-location-arrow"></i> Logout</a></li> --}}
-                            {{--endif;?> --}}
+                            @endif
                         </ul>
 						<!-- <select id="basic" class="selectpicker show-tick form-control" data-placeholder="Sign In"  >
 							<option >Register Here</option>

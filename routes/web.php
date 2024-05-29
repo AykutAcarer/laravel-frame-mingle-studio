@@ -32,6 +32,7 @@ Route::get('/login', [UserController::class, 'showLogin'])->name('login');
 Route::get('/register', [UserController::class, 'showRegister'])->name('register');
 
 //Create New User
+Route::post('/users', [UserController::class, 'create'])->name('users');
 
 //Show Cart Page
 Route::get('/cart', [CartController::class, 'index'])->name('cart');

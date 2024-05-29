@@ -38,20 +38,13 @@
                         <h3>Create New Account</h3>
                     </div>
                     <!-- <h5><a data-toggle="collapse" href="#formRegister" role="button" aria-expanded="false">Click here to Register</a></h5> -->
-                    <form class="mt-3 review-form-box" id="formRegister" method="POST">
+                    <form class="mt-3 review-form-box" id="formRegister" method="POST" action={{route('users')}}>
                         @csrf
                         <div class="form-row">
                             <div class="form-group col-md-6">
-                                <label for="firstname" class="mb-0">First Name</label>
-                                <input type="text" name="firstname" class="form-control" id="InputName" placeholder=""> 
-                                @error('firstname')
-                                    <p class="text-red-500 text-xs mt-1">{{$message}}</p>
-                                @enderror
-                            </div>
-                            <div class="form-group col-md-6">
-                                <label for="lastname" class="mb-0">Last Name</label>
-                                <input type="text" name="lastname" class="form-control" id="InputLastname" placeholder=""> 
-                                @error('lastname')
+                                <label for="firstname" class="mb-0">Name</label>
+                                <input type="text" name="name" class="form-control" id="InputName" placeholder=""> 
+                                @error('name')
                                     <p class="text-red-500 text-xs mt-1">{{$message}}</p>
                                 @enderror
                             </div>
