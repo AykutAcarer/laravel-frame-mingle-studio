@@ -1,4 +1,6 @@
-<x-layout>
+@extends('components/layout2')
+
+@section('content')
 
 
     <!-- Start All Title Box -->
@@ -36,38 +38,43 @@
                             </thead>
                             <tbody>
                                 
-                                    {{-- foreach($products as $item)
-                                    {
-                                        //get just first image of each products in order to show product list
-                                        $firstImageUrl = isset($item['images'][0]['images_url']) ? $item['images'][0]['images_url'] : null;
-                                        echo'
+                                    @foreach($products as $product)
+                                    
+                                        {{-- //get just first image of each products in order to show product list --}}
+                                        @php
+                                            $firstImageUrl = isset($product['images'][0]['images_url']) ? $product['images'][0]['images_url'] : null;
+                                        @endphp
                                             <tr>
                                                 <td class="thumbnail-img">
                                                     <a href="#">
-                                                <img class="img-fluid" src="'.ASSETS.'/'.$firstImageUrl.'" alt="" />
+                                                <img class="img-fluid" src={{asset($firstImageUrl)}} alt="" />
                                             </a>
                                                 </td>
                                                 <td class="name-pr">
                                                     <a href="#">
-                                                '.$item['product_name'].'
+                                                {{$product->product_name}}
                                             </a>
                                                 </td>
                                                 <td class="price-pr">
-                                                    <p>$ '.$item['product_preis_now'].'</p>
+                                                    <p>${{$product->product_preis_now}}</p>
                                                 </td>
                                                 <td class="quantity-box">
-                                                    <input type="number" size="4" value="1" min="0" step="1" class="c-input-text qty text" onchange="updateTotal(this,'.$item['product_preis_now'].','.$item['product_id'].')"></td>
+                                                    <input type="number" size="4" value="1" min="0" step="1" class="c-input-text qty text" onchange="updateTotal(this,{{$product->product_preis_now}},{{$product->id}})"></td>
                                                 <td class="total-pr">
-                                                    <p id="totalPrice-'.$item['product_id'].'">$ 0</p>
+                                                    <p id="totalPrice-{{$product->id}}">$ 0</p>
                                                 </td>
+                                                <form method='post' action={{route('cart', $product->id)}}>
+                                                @csrf
+                                                @method('DELETE')
                                                 <td class="remove-pr">
-                                                    <a href="'.ROOT.'cartdelete/?product_id='.$item['product_id'].'">
-                                                <i class="fas fa-times"></i>
-                                            </a>
+                                                    <button type="submit" class="btn btn-sm" style="background-color: #ed6f21; color:white; font-weight:bolder">X
+                                                    </button>
+                                                </form>
+                                            
                                                 </td>
                                             </tr>
-                                        ';
-                                    } --}}
+                                        
+                                    @endforeach
                                 
                             </tbody>
                         </table>
@@ -137,5 +144,4 @@
         </div>
     </div>
     <!-- End Cart -->
-
-</x-layout>
+@endsection

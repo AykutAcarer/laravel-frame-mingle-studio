@@ -20,7 +20,7 @@ Route::get('/about', [AboutController::class, 'index'])->name('about') ;
 Route::get('/products', [ProductController::class, 'showAll'])->name('products');
 
 //Show Single Product Page and get Data for Product
-Route::get('/products/{product}', [ProductController::class, 'showSingle'])->name('show');
+Route::get('/products/{product}', [ProductController::class, 'showSingle'])->name('/products/{product}');
 
 //Show Contact Page
 Route::get('/contact', [ContactController::class, 'index'])->name('contact');
@@ -38,7 +38,13 @@ Route::get('/register', [UserController::class, 'showRegister'])->name('register
 Route::post('/users', [UserController::class, 'register'])->name('users');
 
 //Show Cart Page
-Route::get('/cart', [CartController::class, 'index'])->name('cart');
+// Route::get('/cart', [CartController::class, 'index'])->name('cart');
+
+//Add Product to Cart
+Route::get('cart/{id}', [CartController::class, 'addCart'])->name('cart');
+
+//Delete Product From Cart
+Route::delete('cart/{id}', [CartController::class, 'delete']);
 
 //Show Account Page
 Route::get('/account', [AccountController::class, 'index'])->name('account');

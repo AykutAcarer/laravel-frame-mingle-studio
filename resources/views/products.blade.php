@@ -1,4 +1,6 @@
-<x-layout>
+@extends('components/layout')
+
+@section('content')
 
 
 
@@ -86,7 +88,7 @@
                                                 <div class="products-single fix">
                                                     <div class="box-img-hover">
                                                         <div class="type-lb">
-                                                            <p class="sale">Sale</p>
+                                                            {{-- <p class="sale">Sale</p> --}}
                                                         </div>
                                                         <img src={{asset($firstImageUrl)}} class="img-fluid" alt="Image">
                                                         <div class="mask-icon">
@@ -98,11 +100,11 @@
                                                                     <li><a href={{route('login')}} data-toggle="tooltip" data-placement="right" title="Add to Wishlist"><i class="far fa-heart"></i></a></li>
                                                                 @endauth
                                                             </ul>
-                                                            @auth
-                                                            <a class="cart" href={{route('cart')}}>Add to Cart</a>
-                                                            @else
-                                                            <a class="cart" href={{route('login')}}>Add to Cart</a>
-                                                            @endauth
+                                                                @auth
+                                                                <a class="cart" href={{route('cart',['id'=>$product->id])}} >Add to Cart</a>
+                                                                @else
+                                                                <a class="cart" href={{route('login')}}>Add to Cart</a>
+                                                                @endauth
                                                         </div>
                                                     </div>
                                                     <div class="why-text">
@@ -131,7 +133,7 @@
                                                         <div class="products-single fix">
                                                             <div class="box-img-hover">
                                                                 <div class="type-lb">
-                                                                    <p class="new">New</p>
+                                                                    {{-- <p class="new">New</p> --}}
                                                                 </div>
                                                                 <img src={{asset($firstImageUrl)}} class="img-fluid" alt="Image">
                                                                 <div class="mask-icon">
@@ -149,7 +151,11 @@
                                                             <h4>{{$product->product_name}}</h4>
                                                             <h5 style="color: aliceblue"> <del>${{$product->product_preis_from}}</del> ${{$product->product_preis_now}}</h5>
                                                             <p>{{$product['product_description']}}</p>
-                                                            <a class="btn hvr-hover" href="cart">Add to Cart</a>
+                                                            @auth
+                                                            <a class="btn hvr-hover" href={{route('cart',['id'=>$product->id])}}>Add to Cart</a>
+                                                            @else
+                                                            <a class="cart" href={{route('login')}}>Add to Cart</a>
+                                                            @endauth
                                                         </div>
                                                     </div>
                                                 </div>
@@ -224,4 +230,4 @@
         </div>
     </div>
 
-</x-layout>
+@endsection

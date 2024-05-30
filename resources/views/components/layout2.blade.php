@@ -21,13 +21,13 @@
 
 
     <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="../resources/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../../resources/css/bootstrap.min.css">
     <!-- Site CSS -->
-    <link rel="stylesheet" href="../resources/css/style.css">
+    <link rel="stylesheet" href="../../resources/css/style.css">
     <!-- Responsive CSS -->
-    <link rel="stylesheet" href="../resources/css/responsive.css">
+    <link rel="stylesheet" href="../../resources/css/responsive.css">
     <!-- Custom CSS -->
-    <link rel="stylesheet" href="../resources/css/custom.css">
+    <link rel="stylesheet" href="../../resources/css/custom.css">
 
     <!-- [if lt IE 9]> 
       <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
@@ -414,25 +414,23 @@
    
 
     <a href="#" id="back-to-top" title="Back to top" style="display: none;">&uarr;</a>
-
-
     
     <!-- ALL JS FILES -->
-    <script src="../resources/js/jquery-3.2.1.min.js"></script>
-    <script src="../resources/js/popper.min.js"></script>
-    <script src="../resources/js/bootstrap.min.js"></script>
+    <script src="../../resources/js/jquery-3.2.1.min.js"></script>
+    <script src="../../resources/js/popper.min.js"></script>
+    <script src="../../resources/js/bootstrap.min.js"></script>
     <!-- ALL PLUGINS -->
-    <script src="../resources/js/jquery.superslides.min.js"></script>
-    <script src="../resources/js/bootstrap-select.js"></script>
-    <script src="../resources/js/inewsticker.js"></script>
-    <script src="../resources/js/bootsnav.js."></script>
-    <script src="../resources/js/images-loded.min.js"></script>
-    <script src="../resources/js/isotope.min.js"></script>
-    <script src="../resources/js/owl.carousel.min.js"></script>
-    <script src="../resources/js/baguetteBox.min.js"></script>
-    <script src="../resources/js/form-validator.min.js"></script>
-    <script src="../resources/js/contact-form-script.js"></script>
-    <script src="../resources/js/custom.js"></script>
+    <script src="../../resources/js/jquery.superslides.min.js"></script>
+    <script src="../../resources/js/bootstrap-select.js"></script>
+    <script src="../../resources/js/inewsticker.js"></script>
+    <script src="../../resources/js/bootsnav.js."></script>
+    <script src="../../resources/js/images-loded.min.js"></script>
+    <script src="../../resources/js/isotope.min.js"></script>
+    <script src="../../resources/js/owl.carousel.min.js"></script>
+    <script src="../../resources/js/baguetteBox.min.js"></script>
+    <script src="../../resources/js/form-validator.min.js"></script>
+    <script src="../../resources/js/contact-form-script.js"></script>
+    <script src="../../resources/js/custom.js"></script>
     
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 

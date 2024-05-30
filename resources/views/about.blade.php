@@ -1,4 +1,6 @@
-<x-layout>
+@extends('components/layout')
+
+@section('content')
 
     <!-- Start About Page  -->
     <div class="about-box-main">
@@ -151,4 +153,4 @@
     </div>
     <!-- End About Page -->
 
-</x-layout>
+@endsection

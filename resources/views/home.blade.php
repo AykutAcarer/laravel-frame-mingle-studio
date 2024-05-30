@@ -1,4 +1,6 @@
-<x-layout>
+@extends('components/layout')
+
+@section('content')
 
 <!-- Start Slider -->
     <!-- <img src="https://i.etsystatic.com/isbl/5876f1/67581128/isbl_1349x480.67581128_rb605aca.jpg?version=0"> -->
@@ -287,5 +289,4 @@
 
 
 
-
-</x-layout>
+@endsection
