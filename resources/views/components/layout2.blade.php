@@ -162,6 +162,17 @@
                         <li class="search"><a href="#"><i class="fa fa-search"></i></a></li>
                         <li class="nav-item">
                             @auth
+							<a href={{route('wishlist',['id'=>'all'])}} style="color: #ed6f21">
+								<p><i class=""></i> Wish List</p>
+							</a>
+                            @else
+                            <a href={{route('login')}} style="color: #ed6f21">
+								<p><i class=""></i> Wish List</p>
+							</a>
+                            @endauth
+						</li>
+                        <li class="nav-item">
+                            @auth
 							<a href={{route('cart',['id'=>'all'])}} style="color: #ed6f21">
 								<p><i class="fa fa-shopping-bag"></i> My Cart</p>
 							</a>

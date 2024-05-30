@@ -94,14 +94,23 @@
                             <div class="price-box-bar">
                                 <div class="cart-and-bay-btn">
                                     <!-- <a class="btn hvr-hover" data-fancybox-close="" href="#">Buy New</a> -->
-                                    <a class="btn hvr-hover" data-fancybox-close="" href="#">Add to cart</a>
+                                    @auth
+                                    <a class="btn hvr-hover" data-fancybox-close="" href={{route('cart',['id'=>$product_item->id])}}>Add to cart</a>
+                                    @else
+                                    <a class="btn hvr-hover" data-fancybox-close="" href={{route('login')}}>Add to cart</a>
+                                    @endauth
                                 </div>
                             </div>
     
                             <div class="add-to-btn">
                                 <div class="add-comp">
-                                    <a class="btn hvr-hover" href="#"><i class="fas fa-heart"></i> Add to wishlist</a>
+                                    @auth
+                                    <a class="btn hvr-hover" href={{route('wishlist',['id'=>$product_item->id])}}><i class="fas fa-heart"></i> Add to wishlist</a>
+                                    @else
+                                    <a class="btn hvr-hover" href={{route('login')}}><i class="fas fa-heart"></i> Add to wishlist</a>
+                                    @endauth
                                     <!-- <a class="btn hvr-hover" href="#"><i class="fas fa-sync-alt"></i> Add to Compare</a> -->
+
                                 </div>
                                 <div class="share-bar">
                                     <a class="btn hvr-hover" href="#"><i class="fab fa-facebook" aria-hidden="true"></i></a>
@@ -183,10 +192,18 @@
                                        <img src={{asset($firstImageUrl)}} class="img-fluid" alt="Image">
                                        <div class="mask-icon">
                                            <ul>
-                                               <li><a href="#" data-toggle="tooltip" data-placement="right" title="View"><i class="fas fa-eye"></i></a></li>
-                                               <li><a href="#" data-toggle="tooltip" data-placement="right" title="Add to Wishlist"><i class="far fa-heart"></i></a></li>
-                                           </ul>
-                                           <a class="cart" href="#">Add to Cart</a>
+                                               <li><a href={{route('products')}}{{'/'.$product_item->id}} data-toggle="tooltip" data-placement="right" title="View"><i class="fas fa-eye"></i></a></li>
+                                               @auth
+                                               <li><a href={{route('wishlist',['id'=>$product_item->id])}} data-toggle="tooltip" data-placement="right" title="Add to Wishlist"><i class="far fa-heart"></i></a></li>
+                                               @else
+                                               <li><a href={{route('login')}} data-toggle="tooltip" data-placement="right" title="Add to Wishlist"><i class="far fa-heart"></i></a></li>
+                                               @endauth
+                                            </ul>
+                                           @auth
+                                           <a class="cart" href={{route('cart',['id'=>$product_item->id])}}>Add to Cart</a>
+                                           @else
+                                           <a class="cart" href={{route('login')}}>Add to Cart</a>
+                                           @endauth
                                        </div>
                                    </div>
                                    <div class="why-text">

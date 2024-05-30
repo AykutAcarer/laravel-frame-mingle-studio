@@ -9,6 +9,7 @@ use App\Http\Controllers\AboutController;
 use App\Http\Controllers\AccountController;
 use App\Http\Controllers\ContactController;
 use App\Http\Controllers\ProductController;
+use App\Http\Controllers\WishlistController;
 
 //Show Home Page
 Route::get('/', [HomeController::class, 'index'])->name('home');
@@ -40,11 +41,17 @@ Route::post('/users', [UserController::class, 'register'])->name('users');
 //Show Cart Page
 // Route::get('/cart', [CartController::class, 'index'])->name('cart');
 
-//Add Product to Cart
+//Show and Add Product to Cart
 Route::get('cart/{id}', [CartController::class, 'addCart'])->name('cart');
 
 //Delete Product From Cart
 Route::delete('cart/{id}', [CartController::class, 'delete']);
+
+//Show and Add Product to Wish List
+Route::get('wishlist/{id}', [WishlistController::class, 'addList'])->name('wishlist');
+
+//Delete Product From Wish List
+Route::delete('wishlist/{id}', [WishlistController::class, 'delete']);
 
 //Show Account Page
 Route::get('/account', [AccountController::class, 'index'])->name('account');

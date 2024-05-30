@@ -45,7 +45,7 @@ class CartController extends Controller
             ->first();
 
             if($existingCart){
-                return redirect('/products')->with('message', 'This product is already in your cart');
+                return back()->with('message', 'This product is already in your cart');
             }else{
                 
                 $cart = [];
@@ -54,7 +54,7 @@ class CartController extends Controller
     
                 Cart::create($cart);
     
-                return redirect('/products')->with('message', 'You have added to Cart');
+                return back()->with('message', 'You have added to Cart');
 
             }
             

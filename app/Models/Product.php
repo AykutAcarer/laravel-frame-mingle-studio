@@ -23,4 +23,9 @@ class Product extends Model
     public function cart(){
         return $this->hasMany(Cart::class, 'product_id_fk');
     }
+
+    //Relationship with cart
+    public function wishlist(){
+        return $this->hasMany(Wishlist::class, 'product_id_fk');
+    }
 }

@@ -46,12 +46,12 @@
                                         @endphp
                                             <tr>
                                                 <td class="thumbnail-img">
-                                                    <a href="#">
+                                                    <a href={{route('products')}}{{'/'.$product->id}}>
                                                 <img class="img-fluid" src={{asset($firstImageUrl)}} alt="" />
                                             </a>
                                                 </td>
                                                 <td class="name-pr">
-                                                    <a href="#">
+                                                    <a href={{route('products')}}{{'/'.$product->id}}>
                                                 {{$product->product_name}}
                                             </a>
                                                 </td>

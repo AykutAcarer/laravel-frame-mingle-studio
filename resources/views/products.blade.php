@@ -95,7 +95,7 @@
                                                             <ul>
                                                                 <li><a href={{route('products')}}{{'/'.$product->id}} data-toggle="tooltip" data-placement="right" title="View"><i class="fas fa-eye"></i></a></li>
                                                                 @auth
-                                                                    <li><a href="#" data-toggle="tooltip" data-placement="right" title="Add to Wishlist"><i class="far fa-heart"></i></a></li>
+                                                                    <li><a href={{route('wishlist',['id'=>$product->id])}} data-toggle="tooltip" data-placement="right" title="Add to Wishlist"><i class="far fa-heart"></i></a></li>
                                                                 @else
                                                                     <li><a href={{route('login')}} data-toggle="tooltip" data-placement="right" title="Add to Wishlist"><i class="far fa-heart"></i></a></li>
                                                                 @endauth
@@ -139,7 +139,11 @@
                                                                 <div class="mask-icon">
                                                                     <ul>
                                                                         <li><a href="products/{{$product->id}}" data-toggle="tooltip" data-placement="right" title="View"><i class="fas fa-eye"></i></a></li>
-                                                                        <li><a href="#" data-toggle="tooltip" data-placement="right" title="Add to Wishlist"><i class="far fa-heart"></i></a></li>
+                                                                        @auth
+                                                                        <li><a href={{route('wishlist',['id'=>$product->id])}} data-toggle="tooltip" data-placement="right" title="Add to Wishlist"><i class="far fa-heart"></i></a></li>
+                                                                        @else
+                                                                        <li><a href={{route('login')}} data-toggle="tooltip" data-placement="right" title="Add to Wishlist"><i class="far fa-heart"></i></a></li>
+                                                                        @endauth
                                                                     </ul>
 
                                                                 </div>
