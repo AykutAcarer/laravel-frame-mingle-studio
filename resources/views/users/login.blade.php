@@ -21,14 +21,23 @@
                         <h3>Account Login</h3>
                     </div>
                     <!-- <h5><a data-toggle="collapse" href="#formLogin" role="button" aria-expanded="true">Click here to Login</a></h5> -->
-                    <form class="mt-3 review-form-box" id="formLogin" method="post">
+                    <form class="mt-3 review-form-box" id="formLogin" method="post" action={{route('users/login')}}>
+                        @csrf
                         <div class="form-row">
                             <div class="form-group col-md-6">
                                 <label for="email" class="mb-0">Email Address</label>
-                                <input type="email" name="email" class="form-control" id="InputEmail" placeholder=""> </div>
+                                <input type="email" name="email" class="form-control" id="InputEmail" placeholder=""> 
+                                @error('email')
+                                    <p class="text-red-500 text-xs mt-1">{{$message}}</p>
+                                @enderror
+                            </div>
                             <div class="form-group col-md-6">
                                 <label for="password" class="mb-0">Password</label>
-                                <input type="password" name="password" class="form-control" id="InputPassword" placeholder=""> </div>
+                                <input type="password" name="password" class="form-control" id="InputPassword" placeholder=""> 
+                                @error('password')
+                                    <p class="text-red-500 text-xs mt-1">{{$message}}</p>
+                                @enderror
+                            </div>
                         </div>
                         <button class="btn hvr-hover">Login</button>
                     </form>

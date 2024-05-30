@@ -28,14 +28,20 @@ Route::get('/contact', [ContactController::class, 'index'])->name('contact');
 //Show Login Page
 Route::get('/login', [UserController::class, 'showLogin'])->name('login');
 
+//Login
+Route::post('/users/login', [UserController::class, 'login'])->name('users/login');
+
 //Show Register Page
 Route::get('/register', [UserController::class, 'showRegister'])->name('register');
 
 //Create New User
-Route::post('/users', [UserController::class, 'create'])->name('users');
+Route::post('/users', [UserController::class, 'register'])->name('users');
 
 //Show Cart Page
 Route::get('/cart', [CartController::class, 'index'])->name('cart');
 
 //Show Account Page
 Route::get('/account', [AccountController::class, 'index'])->name('account');
+
+//Logout
+Route::get('/logout', [UserController::class, 'logout'])->name('logout');

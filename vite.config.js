@@ -6,7 +6,6 @@ export default defineConfig({
         laravel({
             input: ['resources/css/all.css',
             'resources/css/animate.css', 
-            'resources/css/app.css', 
             'resources/css/baguetteBox.min.css', 
             'resources/css/bootsnav.css', 
             'resources/css/bootstrap-select.css', 

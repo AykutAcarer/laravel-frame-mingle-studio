@@ -22,8 +22,7 @@
     @vite(['resources/css/all.css',
     'resources/css/responsive.css', 
     'resources/css/style.css', 
-    'resources/css/animate.css', 
-    'resources/css/app.css', 
+    'resources/css/animate.css',  
     'resources/css/baguetteBox.min.css', 
     'resources/css/bootsnav.css', 
     'resources/css/bootstrap-select.css', 
@@ -33,25 +32,7 @@
     'resources/css/custom.css', 
     'resources/css/jquery-ui.css', 
     'resources/css/owl.carousel.min.css', 
-    'resources/css/superslides.css', 
-    'resources/js/app.js',
-    'resources/js/baguetteBox.min.js',
-    'resources/js/bootsnav.js',
-    'resources/js/bootstrap-select.js',
-    'resources/js/bootstrap.js',
-    'resources/js/bootstrap.min.js',
-    'resources/js/contact-form-script.js',
-    'resources/js/custom.js',
-    'resources/js/form-validator.min.js',
-    'resources/js/images-loded.min.js',
-    'resources/js/inewsticker.js',
-    'resources/js/isotope.min.js',
-    'resources/js/jquery-3.2.1.min.js',
-    'resources/js/jquery-ui.js',
-    'resources/js/jquery.nicescroll.min.js',
-    'resources/js/jquery.superslides.min.js',
-    'resources/js/owl.carousel.min.js',
-    'resources/js/popper.min.js'])
+    'resources/css/superslides.css'])
 
     {{-- <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="../resources/css/bootstrap.min.css">
@@ -92,7 +73,9 @@
                     </div> -->
                     <div class="our-link">
                         <ul>
+                            @auth
                             <li><a href={{route('account')}}><i class="fa fa-user s_color" ></i> My Account</a></li>
+                            @endauth
                             <li><a href="#"><i class="fas fa-location-arrow"></i> Our location</a></li>
                             <li><a href={{route('contact')}}><i class="fas fa-headset"></i> Contact Us</a></li>
                         </ul>
@@ -101,13 +84,13 @@
                 <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 d-flex flex-row-reverse">
 					<div class="our-link">
                         <ul class="">
-                            @if(auth()->user())
+                            @auth
                                 <li style="color:aliceblue">Welcome {{auth()->user()->name}}</li>
-                                <li><a href="#"><i class="fas fa-location-arrow"></i> Logout</a></li>
+                                <li><a href={{route('logout')}}><i class="fas fa-location-arrow"></i> Logout</a></li>
                             @else
                                 <li><a href={{route('register')}}><i class="fa fa-user s_color" ></i> Register</a></li>
                                 <li><a href={{route('login')}}><i class="fas fa-location-arrow"></i> Login</a></li>
-                            @endif
+                            @endauth
                         </ul>
 						<!-- <select id="basic" class="selectpicker show-tick form-control" data-placeholder="Sign In"  >
 							<option >Register Here</option>
@@ -438,8 +421,27 @@
 
     <a href="#" id="back-to-top" title="Back to top" style="display: none;">&uarr;</a>
 
+    {{-- @vite([
+    'resources/js/app.js',
+    'resources/js/baguetteBox.min.js',
+    'resources/js/bootsnav.js',
+    'resources/js/bootstrap-select.js',
+    'resources/js/bootstrap.js',
+    'resources/js/bootstrap.min.js',
+    'resources/js/contact-form-script.js',
+    'resources/js/custom.js',
+    'resources/js/form-validator.min.js',
+    'resources/js/images-loded.min.js',
+    'resources/js/inewsticker.js',
+    'resources/js/isotope.min.js',
+    'resources/js/jquery-3.2.1.min.js',
+    'resources/js/jquery-ui.js',
+    'resources/js/jquery.nicescroll.min.js',
+    'resources/js/jquery.superslides.min.js',
+    'resources/js/owl.carousel.min.js',
+    'resources/js/popper.min.js']) --}}
     
-    {{-- <!-- ALL JS FILES -->
+    <!-- ALL JS FILES -->
     <script src="../resources/js/jquery-3.2.1.min.js"></script>
     <script src="../resources/js/popper.min.js"></script>
     <script src="../resources/js/bootstrap.min.js"></script>
@@ -454,33 +456,33 @@
     <script src="../resources/js/baguetteBox.min.js"></script>
     <script src="../resources/js/form-validator.min.js"></script>
     <script src="../resources/js/contact-form-script.js"></script>
-    <script src="../resources/js/custom.js"></script> --}}
+    <script src="../resources/js/custom.js"></script>
     
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script>
-    function updateTotal(input, pricePerItem, product_id) {
-        // Get the price per item
-        var pricePerItem = pricePerItem;
-        // Get the quantity entered by the user
-        var quantity = input.value;
-        // Calculate the total price by multiplying price per item with quantity
-        var totalPrice = pricePerItem * quantity;
-        // Update the total price displayed in the HTML
-        document.getElementById("totalPrice-"+product_id).textContent = "$ " + totalPrice.toFixed(2);
+        function updateTotal(input, pricePerItem, product_id) {
+            // Get the price per item
+            var pricePerItem = pricePerItem;
+            // Get the quantity entered by the user
+            var quantity = input.value;
+            // Calculate the total price by multiplying price per item with quantity
+            var totalPrice = pricePerItem * quantity;
+            // Update the total price displayed in the HTML
+            document.getElementById("totalPrice-"+product_id).textContent = "$ " + totalPrice.toFixed(2);
 
-        // Calculate subtotal
-        var subtotal = 0;
-        $(".total-pr p").each(function() {
-            subtotal += parseFloat($(this).text().replace("$ ", ""));
-        });
-        $("#subTotal").text("$ " + subtotal.toFixed(2));
-        
-        // Calculate grand total (considering discount, tax, shipping, etc.)
-        var grandTotal = subtotal;
-        // You can add any additional calculations for discounts, taxes, shipping, etc. here
-        $(".gr-total .h5").text("$ " + grandTotal.toFixed(2));
-    }
-</script>
+            // Calculate subtotal
+            var subtotal = 0;
+            $(".total-pr p").each(function() {
+                subtotal += parseFloat($(this).text().replace("$ ", ""));
+            });
+            $("#subTotal").text("$ " + subtotal.toFixed(2));
+            
+            // Calculate grand total (considering discount, tax, shipping, etc.)
+            var grandTotal = subtotal;
+            // You can add any additional calculations for discounts, taxes, shipping, etc. here
+            $(".gr-total .h5").text("$ " + grandTotal.toFixed(2));
+        }
+    </script>
 
 </body>
 

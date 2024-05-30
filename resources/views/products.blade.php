@@ -56,7 +56,9 @@
                                 </div>
                                 <p>Showing all 4 results</p>
                             </div>
+                            
                             <div class="col-12 col-sm-4 text-center text-sm-right">
+                                
                                 <ul class="nav nav-tabs ml-auto">
                                     <li>
                                         <a class="nav-link active" href="#grid-view" data-toggle="tab"> <i class="fa fa-th"></i> </a>
@@ -75,8 +77,10 @@
 
                                         <!-- For Each Start -->
                                         @foreach($products as $product)
-                                            {{-- //get just first image each products in order to show product list --}}
-                                            {{-- // $firstImageUrl = isset($item['images'][0]['images_url']) ? $item['images'][0]['images_url'] : null; --}}
+                                            {{-- //get just first image each products in order to show product list  --}}
+                                            @php
+                                                $firstImageUrl = isset($product['images'][0]['images_url']) ? $product['images'][0]['images_url'] : null;
+                                            @endphp
                                 
                                             <div class="col-sm-6 col-md-6 col-lg-4 col-xl-4">
                                                 <div class="products-single fix">
@@ -84,22 +88,26 @@
                                                         <div class="type-lb">
                                                             <p class="sale">Sale</p>
                                                         </div>
-                                                        
-                                                            
-                                                                <img src="images/70ReasonsWithYou-img-1.jpg" class="img-fluid" alt="Image">
-                                                            
-                                                        
+                                                        <img src={{asset($firstImageUrl)}} class="img-fluid" alt="Image">
                                                         <div class="mask-icon">
                                                             <ul>
-                                                                <li><a href="products/{{$product['id']}}" data-toggle="tooltip" data-placement="right" title="View"><i class="fas fa-eye"></i></a></li>
-                                                                <li><a href="#" data-toggle="tooltip" data-placement="right" title="Add to Wishlist"><i class="far fa-heart"></i></a></li>
+                                                                <li><a href={{route('products')}}{{'/'.$product->id}} data-toggle="tooltip" data-placement="right" title="View"><i class="fas fa-eye"></i></a></li>
+                                                                @auth
+                                                                    <li><a href="#" data-toggle="tooltip" data-placement="right" title="Add to Wishlist"><i class="far fa-heart"></i></a></li>
+                                                                @else
+                                                                    <li><a href={{route('login')}} data-toggle="tooltip" data-placement="right" title="Add to Wishlist"><i class="far fa-heart"></i></a></li>
+                                                                @endauth
                                                             </ul>
-                                                            <a class="cart" href="cart">Add to Cart</a>
+                                                            @auth
+                                                            <a class="cart" href={{route('cart')}}>Add to Cart</a>
+                                                            @else
+                                                            <a class="cart" href={{route('login')}}>Add to Cart</a>
+                                                            @endauth
                                                         </div>
                                                     </div>
                                                     <div class="why-text">
-                                                        <h4>{{$product['product_name']}}</h4>
-                                                        <p>{{$product['product_description']}}</p>
+                                                        <h4>{{$product->product_name}}</h4>
+                                                        <h5>${{$product->product_preis_now}}</h5>
                                                     </div>
                                                 </div>
                                             </div>
@@ -114,8 +122,9 @@
                                     @foreach($products as $product)
                                     
                                         {{-- //get just first image each products in order to show product list --}}
-                                        {{-- $firstImageUrl = isset($item['images'][0]['images_url']) ? $item['images'][0]['images_url'] : null; --}}
-                                        
+                                        @php
+                                            $firstImageUrl = isset($product['images'][0]['images_url']) ? $product['images'][0]['images_url'] : null;
+                                        @endphp                                        
                                             <div class="list-view-box">
                                                 <div class="row">
                                                     <div class="col-sm-6 col-md-6 col-lg-4 col-xl-4">
@@ -124,10 +133,10 @@
                                                                 <div class="type-lb">
                                                                     <p class="new">New</p>
                                                                 </div>
-                                                                <img src="images/70ReasonsWithYou-img-1.jpg" class="img-fluid" alt="Image">
+                                                                <img src={{asset($firstImageUrl)}} class="img-fluid" alt="Image">
                                                                 <div class="mask-icon">
                                                                     <ul>
-                                                                        <li><a href="products/{{$product['id']}}" data-toggle="tooltip" data-placement="right" title="View"><i class="fas fa-eye"></i></a></li>
+                                                                        <li><a href="products/{{$product->id}}" data-toggle="tooltip" data-placement="right" title="View"><i class="fas fa-eye"></i></a></li>
                                                                         <li><a href="#" data-toggle="tooltip" data-placement="right" title="Add to Wishlist"><i class="far fa-heart"></i></a></li>
                                                                     </ul>
 
@@ -137,8 +146,8 @@
                                                     </div>
                                                     <div class="col-sm-6 col-md-6 col-lg-8 col-xl-8">
                                                         <div class="why-text full-width">
-                                                            <h4>{{$product['product_name']}}</h4>
-                                                            <h5> <del>${{$product['product_preis_from']}}</del> ${{$product['product_preis_now']}}</h5>
+                                                            <h4>{{$product->product_name}}</h4>
+                                                            <h5 style="color: aliceblue"> <del>${{$product->product_preis_from}}</del> ${{$product->product_preis_now}}</h5>
                                                             <p>{{$product['product_description']}}</p>
                                                             <a class="btn hvr-hover" href="cart">Add to Cart</a>
                                                         </div>

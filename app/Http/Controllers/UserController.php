@@ -19,7 +19,7 @@ class UserController extends Controller
     }
     
     //create New User
-    public function create(Request $request){
+    public function register(Request $request){
 
         $formFields = $request->validate([
             'name' => ['required', 'min:3'],
@@ -38,5 +38,33 @@ class UserController extends Controller
 
         //message
         return redirect('/')-> with('message', 'User created successfully and logged in');
+    }
+
+    //Login
+    public function login(Request $request){
+        
+        $formFields = $request->validate([
+            'email' => ['required', 'email'],
+            'password' => 'required'
+        ]);
+
+        if(auth()->attempt($formFields)){
+            $request->session()->regenerate();
+
+            return redirect('/')->with('message', 'You have been logged in');
+        }
+
+        return back()->withErrors(['email'=>'Invalid Credentials'])->onlyInput('email');
+    }
+
+    //Logout
+    public function logout(Request $request){
+
+        auth()->logout();
+
+        $request->session()->invalidate();
+        $request->session()->regenerateToken();
+
+        return redirect('/')->with('message', 'You have been logged out');
     }
 }
