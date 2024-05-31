@@ -25,6 +25,7 @@ class ProductController extends Controller
         
         return view('show',[
             'product'=> Product::with('images','reviews')->find($product),
+            'product_id' => $product->id,
             'products' => Product::all()
         ]);
 

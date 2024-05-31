@@ -8,6 +8,7 @@
             <div class="row">
                 <div class="col-lg-12">
                     <h2>Product Detail</h2>
+                    
                     <!-- <ul class="breadcrumb">
                         <li class="breadcrumb-item"><a href="#">Shop</a></li>
                         <li class="breadcrumb-item active">Shop Detail </li>
@@ -128,15 +129,13 @@
             </div>
             
             <div class="row my-5">
-                <div class="card card-outline-secondary my-4">
+                <div class="card card-outline-secondary my-4 w-100">
                     <div class="card-header">
                         <h2>Product Reviews</h2>
                     </div>
                     <div class="card-body">
-                        
                             <!-- For Each Start -->
                             @foreach ($product as $product_item)
-                             
                              
                                 @foreach($product_item->reviews as $review)
                                     
@@ -152,18 +151,17 @@
                                     </div>
                                 @endforeach
                                 
-                                    
-                                
                             @endforeach
                         <hr>
-                        <form class="mt-3 review-form-box" id="formReview" method="post">
+                        <form class="mt-3 review-form-box" id="formReview" method="POST" action={{route('reviews')}}>
+                            @csrf
                             <div class="form-row ">
                                 <div class="form-group col-lg-12 col-md-6 ">
-                                    <label for="fullname">Full Name</label>
-                                    <input type="text"  name="fullname" class="form-control mb-3 w-100" placeholder="Type your name">
-                                    <label for="review">Review</label>
-                                    <input type="text" name="review" id="review" class="form-control mb-3 w-100" placeholder="Type your reviews about product">
-                                    <input type="hidden" name="product_id" value="">
+                                    <label for="name">Full Name</label>
+                                    <input type="text"  name="name" class="form-control mb-3 w-100" placeholder="Type your name">
+                                    <label for="reviews_text">Review</label>
+                                    <input type="text" name="reviews_text" id="review" class="form-control mb-3 w-100" placeholder="Type your reviews about product">
+                                    <input type="hidden" name="product_id_fk" value={{$product_id}}>
                                     <button class="btn hvr-hover">Leave a Review</button>
                                 </div>
                             </div>
