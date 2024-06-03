@@ -6,11 +6,12 @@ use App\Http\Controllers\CartController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\AboutController;
+use App\Http\Controllers\ReviewController;
 use App\Http\Controllers\AccountController;
 use App\Http\Controllers\ContactController;
 use App\Http\Controllers\ProductController;
-use App\Http\Controllers\ReviewController;
 use App\Http\Controllers\WishlistController;
+use App\Http\Controllers\InstagramController;
 
 //Show Home Page
 Route::get('/', [HomeController::class, 'index'])->name('home');
@@ -62,3 +63,7 @@ Route::get('/account', [AccountController::class, 'index'])->name('account');
 
 //Logout
 Route::get('/logout', [UserController::class, 'logout'])->name('logout');
+
+Route::get('/instagram', [InstagramController::class, 'index']);
+
+

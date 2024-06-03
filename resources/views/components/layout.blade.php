@@ -19,6 +19,24 @@
     <link rel="shortcut icon" href={{asset('images/favicon.ico')}} type="image/x-icon">
     <link rel="apple-touch-icon" href={{asset('images/apple-touch-icon.png')}}>
 
+    <!-- Vite CSS -->
+    {{-- @vite([
+        'resources/css/all.css',
+        'resources/css/animate.css',
+        'resources/css/baguetteBox.min.css',
+        'resources/css/bootsnav.css',
+        'resources/css/bootstrap.min.css',
+        'resources/css/bootstrap-select.css',
+        'resources/css/carousel-ticker.css',
+        'resources/css/code_animate.css',
+        'resources/css/custom.css',
+        'resources/css/jquery-ui.css',
+        'resources/css/owl.carousel.min.css',
+        'resources/css/responsive.css',
+        'resources/css/style.css',
+        'resources/css/superslides.css'
+    ]) --}}
+
 
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="../resources/css/bootstrap.min.css">
@@ -130,7 +148,7 @@
                     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-menu" aria-controls="navbars-rs-food" aria-expanded="false" aria-label="Toggle navigation">
                     <i class="fa fa-bars"></i>
                 </button>
-                    <a class="navbar-brand" href="index"><img src="https://i.etsystatic.com/isla/c30a0d/69076457/isla_180x180.69076457_m35rjrvp.jpg?version=0" class="logo" width="108px"  alt="" ></a>
+                    <a class="navbar-brand" href="{{route('home')}}"><img src="https://i.etsystatic.com/isla/c30a0d/69076457/isla_180x180.69076457_m35rjrvp.jpg?version=0" class="logo" width="108px"  alt="" ></a>
                 </div>
                 <!-- End Header Navigation -->
 
@@ -243,92 +261,7 @@
     @yield('content')
 
 
-    <!-- Start Instagram Feed  -->
-    <div class="instagram-box">
-        <div class="main-instagram owl-carousel owl-theme">
-            <div class="item">
-                <div class="ins-inner-box">
-                    <img src={{asset('images/instagram-img-01.jpg')}} alt="" />
-                    <div class="hov-in">
-                        <a href=""><i class="fab fa-instagram"></i></a>
-                    </div>
-                </div>
-            </div>
-            <div class="item">
-                <div class="ins-inner-box">
-                    <img src={{asset('images/instagram-img-02.jpg')}} alt="" />
-                    <div class="hov-in">
-                        <a href="#"><i class="fab fa-instagram"></i></a>
-                    </div>
-                </div>
-            </div>
-            <div class="item">
-                <div class="ins-inner-box">
-                    <img src={{asset('images/instagram-img-03.jpg')}} alt="" />
-                    <div class="hov-in">
-                        <a href="#"><i class="fab fa-instagram"></i></a>
-                    </div>
-                </div>
-            </div>
-            <div class="item">
-                <div class="ins-inner-box">
-                    <img src={{asset('images/instagram-img-04.jpg')}} alt="" />
-                    <div class="hov-in">
-                        <a href="#"><i class="fab fa-instagram"></i></a>
-                    </div>
-                </div>
-            </div>
-            <div class="item">
-                <div class="ins-inner-box">
-                    <img src={{asset('images/instagram-img-05.jpg')}} alt="" />
-                    <div class="hov-in">
-                        <a href="#"><i class="fab fa-instagram"></i></a>
-                    </div>
-                </div>
-            </div>
-            <div class="item">
-                <div class="ins-inner-box">
-                    <img src={{asset('images/instagram-img-06.jpg')}} alt="" />
-                    <div class="hov-in">
-                        <a href="#"><i class="fab fa-instagram"></i></a>
-                    </div>
-                </div>
-            </div>
-            <div class="item">
-                <div class="ins-inner-box">
-                    <img src={{ asset('images/instagram-img-07.jpg') }} alt="" />
-                    <div class="hov-in">
-                        <a href="#"><i class="fab fa-instagram"></i></a>
-                    </div>
-                </div>
-            </div>
-            <div class="item">
-                <div class="ins-inner-box">
-                    <img src={{asset('images/instagram-img-08.jpg')}} alt="" />
-                    <div class="hov-in">
-                        <a href="#"><i class="fab fa-instagram"></i></a>
-                    </div>
-                </div>
-            </div>
-            <div class="item">
-                <div class="ins-inner-box">
-                    <img src={{asset('images/instagram-img-09.jpg')}} alt="" />
-                    <div class="hov-in">
-                        <a href="#"><i class="fab fa-instagram"></i></a>
-                    </div>
-                </div>
-            </div>
-            <div class="item">
-                <div class="ins-inner-box">
-                    <img src={{asset('images/instagram-img-05.jpg')}} alt="" />
-                    <div class="hov-in">
-                        <a href="#"><i class="fab fa-instagram"></i></a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- End Instagram Feed  -->
+    
 
 
     <!-- Start Footer  -->
@@ -427,7 +360,29 @@
     <a href="#" id="back-to-top" title="Back to top" style="display: none;">&uarr;</a>
 
 
-    
+   <!-- Additional JS files compiled by Mix -->
+   {{-- <script src="{{ asset('js/all.js') }}"></script> --}}
+   
+   <!-- Vite JS -->
+   {{-- @vite([
+    'resources/js/jquery-3.2.1.min.js',
+    'resources/js/popper.min.js',
+    'resources/js/bootstrap.min.js',
+    'resources/js/jquery.superslides.min.js',
+    'resources/js/bootstrap-select.js',
+    'resources/js/inewsticker.js',
+    'resources/js/bootsnav.js',
+    'resources/js/images-loded.min.js',
+    'resources/js/isotope.min.js',
+    'resources/js/owl.carousel.min.js',
+    'resources/js/baguetteBox.min.js',
+    'resources/js/form-validator.min.js',
+    'resources/js/contact-form-script.js',
+    'resources/js/custom.js',
+    'resources/js/jquery.nicescroll.min.js',
+    'resources/js/app.js',
+    'resources/js/jquery-ui.js'
+]) --}}
     <!-- ALL JS FILES -->
     <script src="../resources/js/jquery-3.2.1.min.js"></script>
     <script src="../resources/js/popper.min.js"></script>
@@ -447,6 +402,8 @@
     
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 
+    
+
     <!-- Flash message fade out script -->
     <script>
         $(document).ready(function() {
@@ -454,8 +411,7 @@
                 $('#flash-message').fadeOut('slow');
             }, 3000); 
         });
-    </script>
-
+    </script>   
     <script>
         function updateTotal(input, pricePerItem, product_id) {
             // Get the price per item

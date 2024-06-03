@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Services\InstagramService;
 
-class ContactController extends Controller
+class InstagramController extends Controller
 {
     protected $instagramService;
 
@@ -14,14 +14,11 @@ class ContactController extends Controller
         $this->instagramService = $instagramService;
     }
 
-    //Show Contact Page
-    public function index(){
-        
+    public function index()
+    {
         $userId = $this->instagramService->getUserId(); // Buraya Instagram kullanıcı ID'sini ekleyin
         $posts = $this->instagramService->getRecentPosts($userId);
 
-        return view('contact', [
-            'instagramPosts' => $posts
-        ]);
+        return view('instagram.index', compact('posts'));
     }
 }

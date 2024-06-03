@@ -220,6 +220,27 @@
     </div>
     <!-- End Cart -->
 
+    <!-- Start Instagram Feed  -->
+    <div class="instagram-box">
+        <div class="main-instagram owl-carousel owl-theme">
+           
+            @foreach ($instagramPosts as $post)
+                @if ($post['media_type'] === 'IMAGE' || $post['media_type'] === 'CAROUSEL_ALBUM')
+                <div class="item">
+                    <div class="ins-inner-box">
+                        <img src={{ $post['media_url'] }} alt="" />
+                        <div class="hov-in">
+                            <a href="{{ $post['permalink'] }}"><i class="fab fa-instagram"></i></a>
+                        </div>
+                    </div>
+                </div>
+                @endif
+            @endforeach
+           
+        </div>
+    </div>
+    <!-- End Instagram Feed  -->
+
 @endsection
 
 
