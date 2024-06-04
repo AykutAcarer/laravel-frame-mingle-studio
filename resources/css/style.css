@@ -2508,14 +2508,14 @@
  .single-product-details ul{
      display: inline-block;
      width: 100%;
-     border: 1px #000000 dashed;
-     margin-bottom: 30px;
+     
+     margin-bottom: 10px;
 }
- .single-product-details ul li{
+ /* .single-product-details ul li{
      width: 50%;
      float: left;
      padding: 0px 15px;
-}
+} */
  .size-st .bootstrap-select > .dropdown-toggle.btn-light{
      background: #000000;
      border: none;
@@ -2526,7 +2526,7 @@
      width: 100%;
 }
  .price-box-bar{
-     margin-bottom: 30px;
+     margin-bottom: 10px;
 }
  .price-box-bar a{
      padding: 10px 20px;

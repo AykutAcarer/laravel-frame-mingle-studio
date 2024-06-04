@@ -56,7 +56,7 @@
 									<option value="4">Best Selling</option>
 								</select>
                                 </div>
-                                <p>Showing all 4 results</p>
+                                <p>Showing all {{count($products)}} results</p>
                             </div>
                             
                             <div class="col-12 col-sm-4 text-center text-sm-right">
@@ -172,6 +172,7 @@
                             </div>
                         </div>
                     </div>
+                    <div>{{$products->links()}}</div>                    
                 </div>
 				<div class="col-xl-3 col-lg-3 col-sm-12 col-xs-12 sidebar-shop-left">
                     <div class="product-categori">
@@ -233,6 +234,8 @@
             </div>
         </div>
     </div>
+    
+
 
     <!-- Start Instagram Feed  -->
     <div class="instagram-box">

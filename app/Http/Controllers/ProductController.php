@@ -21,8 +21,11 @@ class ProductController extends Controller
         $userId = $this->instagramService->getUserId(); // Buraya Instagram kullanıcı ID'sini ekleyin
         $posts = $this->instagramService->getRecentPosts($userId);
 
+        
+        
+
         return view('products', [
-            'products' => Product::with('images')->get(),
+            'products' => Product::with('images')->simplePaginate(9),
             'instagramPosts' => $posts
             
         ]);
