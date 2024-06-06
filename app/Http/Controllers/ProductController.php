@@ -21,11 +21,17 @@ class ProductController extends Controller
         $userId = $this->instagramService->getUserId(); // Buraya Instagram kullanıcı ID'sini ekleyin
         $posts = $this->instagramService->getRecentPosts($userId);
 
+        // Filtreleri request'ten al ve varsayılan olarak boş bir dizi kullan
+        $filters = request()->only(['search']) ?: [];
+
+        $productsQuery = Product::with('images')->latest()->filter($filters);
+        $products = $productsQuery->paginate(9);
         
-        
+        $totalProducts = $productsQuery->count();
 
         return view('products', [
-            'products' => Product::with('images')->simplePaginate(9),
+            'products' => $products,
+            'totalProducts' => $totalProducts,
             'instagramPosts' => $posts
             
         ]);

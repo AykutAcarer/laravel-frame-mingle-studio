@@ -124,53 +124,57 @@
                                 <h4>Product Description:</h4>
                                 <p>{{$product_item->product_description}}</p>
                             </div>
-                            <div>
-                                <div class="section">
-                                    <h4>Key Features:</h4>
-                                </div>    
-                                <div>
-                                    <h4>Digital File:</h4>
-                                    <ul>
-                                        <li>1. High-Resolution 300 DPI JPG File Delivered</li>
-                                        <li>2. No Physical Product Shipping Required</li>
-                                        <li>3. Print It at Home or Through Your Preferred Printing Service</li>
-                                    </ul>
-                                </div>
-                                <h4>Unframed Poster:</h4>
-                                <ul>
-                                    <li>1. Premium Semi-Glossy 200 gsm Paper</li>
-                                    <li>2. Securely Packaged for Safe Delivery</li>
-                                </ul>
+                            <div class="list-group list-group-collapse" id="list-group-men" data-children=".sub-men">
+                                <div class="list-group-collapse sub-men">
+                                    <a type="btn" class="" href="#sub-men1" style="font-size:larger; color:#ed6f21" data-toggle="collapse" aria-expanded="true" aria-controls="sub-men1">Read more...
+                                    </a>
+    
                                 
-                                <h4>Poster (Wooden):</h4>
-                                <ul>
-                                    <li>1. Premium Semi-Glossy 200 gsm Paper</li>
-                                    <li>2. Off-White Paper Color</li>
-                                    <li>3. Shatterproof Plexiglass</li>
-                                    <li>4. Includes Hanging Kit for Both Portrait and Landscape Display</li>
-                                    <li>5. Designed for Indoor Use</li>
-                                    <li>6. Ready-to-Hang</li>
-                                </ul>
-                                
-                                <h4>How to Order:</h4>
-                                <ul>
-                                    <li>1. Select your preferred digital or printed option and dimensions.</li>
-                                    <li>2. Provide your personalization details.</li>
-                                    <li>3. Add the item to your cart and complete the purchase.</li>
-                                    <li>4. Fill in your payment information.</li>
-                                    <li>5. Expect a preview within 1-2 business days for your approval.</li>
-                                </ul>
-                                
-                                <h4>Delivery:</h4>
-                                <ul>
-                                    <li>Happiness Guarantee</li>
-                                    <li>You'll receive a preview for confirmation before production begins.</li>
-                                    <li>Once the preview is approved, you'll receive your digital file via email.</li>
-                                    <li>We'll initiate the printing process and provide you with a shipping tracking number.</li>
-                                </ul>
-                            
-                                <p>Please note that while we strive to ensure our designs match what you see in the listing pictures, 
-                                    the printed colors may vary slightly from what you see on your computer screen due to variations in monitor displays.</p>
+                                    <div class="collapse" id="sub-men1" data-parent="#list-group-men">
+                                        <h4>Digital File:</h4>
+                                        <ul>
+                                            <li>1. High-Resolution 300 DPI JPG File Delivered</li>
+                                            <li>2. No Physical Product Shipping Required</li>
+                                            <li>3. Print It at Home or Through Your Preferred Printing Service</li>
+                                        </ul>
+                                        
+                                        <h4>Unframed Poster:</h4>
+                                        <ul>
+                                            <li>1. Premium Semi-Glossy 200 gsm Paper</li>
+                                            <li>2. Securely Packaged for Safe Delivery</li>
+                                        </ul>
+                                        
+                                        <h4>Poster (Wooden):</h4>
+                                        <ul>
+                                            <li>1. Premium Semi-Glossy 200 gsm Paper</li>
+                                            <li>2. Off-White Paper Color</li>
+                                            <li>3. Shatterproof Plexiglass</li>
+                                            <li>4. Includes Hanging Kit for Both Portrait and Landscape Display</li>
+                                            <li>5. Designed for Indoor Use</li>
+                                            <li>6. Ready-to-Hang</li>
+                                        </ul>
+                                        
+                                        <h4>How to Order:</h4>
+                                        <ul>
+                                            <li>1. Select your preferred digital or printed option and dimensions.</li>
+                                            <li>2. Provide your personalization details.</li>
+                                            <li>3. Add the item to your cart and complete the purchase.</li>
+                                            <li>4. Fill in your payment information.</li>
+                                            <li>5. Expect a preview within 1-2 business days for your approval.</li>
+                                        </ul>
+                                        
+                                        <h4>Delivery:</h4>
+                                        <ul>
+                                            <li>Happiness Guarantee</li>
+                                            <li>You'll receive a preview for confirmation before production begins.</li>
+                                            <li>Once the preview is approved, you'll receive your digital file via email.</li>
+                                            <li>We'll initiate the printing process and provide you with a shipping tracking number.</li>
+                                        </ul>
+                                    
+                                        <p>Please note that while we strive to ensure our designs match what you see in the listing pictures, 
+                                            the printed colors may vary slightly from what you see on your computer screen due to variations in monitor displays.</p>
+                                    </div>
+                                </div> 
                             </div>
                                 
                             

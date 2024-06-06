@@ -56,7 +56,7 @@
 									<option value="4">Best Selling</option>
 								</select>
                                 </div>
-                                <p>Showing all {{count($products)}} results</p>
+                                <p>Showing {{count($products)}} of {{$totalProducts}} results</p>
                             </div>
                             
                             <div class="col-12 col-sm-4 text-center text-sm-right">
@@ -177,8 +177,8 @@
 				<div class="col-xl-3 col-lg-3 col-sm-12 col-xs-12 sidebar-shop-left">
                     <div class="product-categori">
                         <div class="search-product">
-                            <form action="#">
-                                <input class="form-control" placeholder="Search here..." type="text">
+                            <form action="{{route('products')}}" method="GET">
+                                <input class="form-control" placeholder="Search here..."name="search" type="text">
                                 <button type="submit"> <i class="fa fa-search"></i> </button>
                             </form>
                         </div>
@@ -187,7 +187,7 @@
                                 <h3>Categories</h3>
                             </div>
                             <div class="list-group list-group-collapse list-group-sm list-group-tree" id="list-group-men" data-children=".sub-men">
-                                <div class="list-group-collapse sub-men">
+                                {{-- <div class="list-group-collapse sub-men">
                                     <a class="list-group-item list-group-item-action" href="#sub-men1" data-toggle="collapse" aria-expanded="true" aria-controls="sub-men1">Fruits & Drinks <small class="text-muted">(100)</small>
 								</a>
                                     <div class="collapse show" id="sub-men1" data-parent="#list-group-men">
@@ -211,13 +211,17 @@
                                             <a href="#" class="list-group-item list-group-item-action">Vegetables 3 <small class="text-muted">(20)</small></a>
                                         </div>
                                     </div>
-                                </div>
-                                <a href="#" class="list-group-item list-group-item-action"> Grocery  <small class="text-muted">(150) </small></a>
-                                <a href="#" class="list-group-item list-group-item-action"> Grocery <small class="text-muted">(11)</small></a>
-                                <a href="#" class="list-group-item list-group-item-action"> Grocery <small class="text-muted">(22)</small></a>
+                                </div> --}}
+                                <a href="{{route('products',['search' => ''])}}" class="list-group-item list-group-item-action"> All </a>
+                                <a href="{{route('products',['search' => 'planners'])}}" class="list-group-item list-group-item-action"> Planners </a>
+                                <a href="{{route('products',['search' => 'collage'])}}" class="list-group-item list-group-item-action"> Photo Collage</a>
+                                <a href="{{route('products',['search' => 'sport'])}}" class="list-group-item list-group-item-action"> Sports Photo Collage </a>
+                                <a href="{{route('products',['search' => 'map'])}}" class="list-group-item list-group-item-action"> City Map </a>
+                                <a href="{{route('products',['search' => 'lyric'])}}" class="list-group-item list-group-item-action"> Lyric Art</a>
+                                <a href="{{route('products',['search' => 'canvas'])}}" class="list-group-item list-group-item-action"> Canvas</a>
                             </div>
                         </div>
-                        <div class="filter-price-left">
+                        {{-- <div class="filter-price-left">
                             <div class="title-left">
                                 <h3>Price</h3>
                             </div>
@@ -228,7 +232,7 @@
                                     <button class="btn hvr-hover" type="submit">Filter</button>
                                 </p>
                             </div>
-                        </div>
+                        </div> --}}
                     </div>
                 </div>
             </div>

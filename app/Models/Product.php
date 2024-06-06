@@ -28,4 +28,14 @@ class Product extends Model
     public function wishlist(){
         return $this->hasMany(Wishlist::class, 'product_id_fk');
     }
+
+    public function scopeFilter($query, array $filters){
+
+        if ($filters['search'] ?? false) {
+            $query->where('product_name', 'like', '%' . request('search') . '%')
+                ->orWhere('product_description', 'like', '%' . request('search') . '%')
+                ->orWhere('product_category', 'like', '%' . request('search') . '%');
+        }
+        
+    }
 }

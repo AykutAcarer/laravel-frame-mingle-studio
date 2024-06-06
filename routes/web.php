@@ -64,6 +64,7 @@ Route::get('/account', [AccountController::class, 'index'])->name('account');
 //Logout
 Route::get('/logout', [UserController::class, 'logout'])->name('logout');
 
+//Get Instagram Feeds using API
 Route::get('/instagram', [InstagramController::class, 'index']);
 
 
