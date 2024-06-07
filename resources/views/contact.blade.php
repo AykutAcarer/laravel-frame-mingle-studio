@@ -72,14 +72,14 @@
                         <h2>CONTACT INFO</h2>
                         <p>We would love to hear from you! Whether you have questions about our products, need assistance with an order, or just want to share your thoughts, please don't hesitate to reach out. </p>
                         <ul>
-                            <li>
+                            {{-- <li>
                                 <p><i class="fas fa-map-marker-alt"></i>Address: Michael I. Days 9000 <br>Preston Street Wichita,<br> KS 87213 </p>
-                            </li>
-                            <li>
+                            </li> --}}
+                            {{-- <li>
                                 <p><i class="fas fa-phone-square"></i>Phone: <a href="tel:+1-888705770">+1-888 705 770</a></p>
-                            </li>
+                            </li> --}}
                             <li>
-                                <p><i class="fas fa-envelope"></i>Email: <a href="mailto:contactinfo@gmail.com">contactinfo@gmail.com</a></p>
+                                <p><i class="fas fa-envelope"></i>Email: <a href="mailto:contactinfo@gmail.com">info@frameminglestudio.com</a></p>
                             </li>
                         </ul>
                     </div>

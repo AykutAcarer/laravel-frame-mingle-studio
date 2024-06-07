@@ -80,7 +80,7 @@
                             @auth
                             <li><a href={{route('account')}}><i class="fa fa-user s_color" ></i> My Account</a></li>
                             @endauth
-                            <li><a href="#"><i class="fas fa-location-arrow"></i> Our location</a></li>
+                            {{-- <li><a href="#"><i class="fas fa-location-arrow"></i> Our location</a></li> --}}
                             <li><a href={{route('contact')}}><i class="fas fa-headset"></i> Contact Us</a></li>
                         </ul>
            
@@ -292,15 +292,15 @@
                     <div class="col-lg-4 col-md-12 col-sm-12">
                         <div class="footer-top-box">
                             <h3>Social Media</h3>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                            <p>Stay connected with us on social media for the latest updates and exclusive offers.</p>
                             <ul>
-                                <li><a href="#"><i class="fab fa-facebook" aria-hidden="true"></i></a></li>
-                                <li><a href="#"><i class="fab fa-twitter" aria-hidden="true"></i></a></li>
+                                {{-- <li><a href="#"><i class="fab fa-facebook" aria-hidden="true"></i></a></li> --}}
+                                <li><a href="https://www.etsy.com/de-en/shop/FrameMingleStudio"><i class="fab fa-etsy" aria-hidden="true"></i></a></li>
                                 {{-- <li><a href="#"><i class="fab fa-linkedin" aria-hidden="true"></i></a></li> --}}
                                 {{-- <li><a href="#"><i class="fab fa-google-plus" aria-hidden="true"></i></a></li> --}}
                                 {{-- <li><a href="#"><i class="fa fa-rss" aria-hidden="true"></i></a></li> --}}
                                 {{-- <li><a href="#"><i class="fab fa-pinterest-p" aria-hidden="true"></i></a></li> --}}
-                                <li><a href="#"><i class="fab fa-whatsapp" aria-hidden="true"></i></a></li>
+                                <li><a href="https://www.instagram.com/frameminglestudio/"><i class="fab fa-instagram" aria-hidden="true"></i></a></li>
                             </ul>
                         </div>
                     </div>
@@ -318,12 +318,12 @@
                         <div class="footer-link">
                             <h4>Information</h4>
                             <ul>
-                                <li><a href="#">About Us</a></li>
+                                <li><a href="{{route('about')}}">About Us</a></li>
                                 {{-- <li><a href="#">Customer Service</a></li> --}}
-                                <li><a href="#">Our Sitemap</a></li>
-                                <li><a href="#">Terms &amp; Conditions</a></li>
-                                <li><a href="#">Privacy Policy</a></li>
-                                <li><a href="#">Delivery Information</a></li>
+                                {{-- <li><a href="#">Our Sitemap</a></li> --}}
+                                <li><a href={{route('terms')}}>Terms &amp; Conditions</a></li>
+                                <li><a href={{route('privacy')}}>Privacy Policy</a></li>
+                                {{-- <li><a href="#">Delivery Information</a></li> --}}
                             </ul>
                         </div>
                     </div>
@@ -331,9 +331,9 @@
                         <div class="footer-link-contact">
                             <h4>Contact Us</h4>
                             <ul>
-                                <li>
+                                {{-- <li>
                                     <p><i class="fas fa-map-marker-alt"></i>Address: Michael I. Days 3756 <br>Preston Street Wichita,<br> KS 67213 </p>
-                                </li>
+                                </li> --}}
                                 {{-- <li>
                                     <p><i class="fas fa-phone-square"></i>Phone: <a href="tel:+1-888705770">+1-888 705 770</a></p>
                                 </li> --}}

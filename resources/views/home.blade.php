@@ -101,8 +101,8 @@
             <div class="row">
                 <div class="col-lg-12">
                     <div class="title-all text-center">
-                        <h1>Featured Products</h1>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed sit amet lacus enim.</p>
+                        <h1>Products</h1>
+                        {{-- <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed sit amet lacus enim.</p> --}}
                     </div>
                     <div class="featured-products-box owl-carousel owl-theme">
                         @foreach ($products as $product_item)
@@ -134,7 +134,7 @@
                                    </div>
                                    <div class="why-text">
                                        <h4>{{$product_item->product_name}}</h4>
-                                       <h5>{{$product_item->product_preis_now}}</h5>
+                                       <h5>${{$product_item->product_preis_now}}</h5>
                                    </div>
                                </div>
                            </div>
