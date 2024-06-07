@@ -25,7 +25,7 @@
                 <div class="col-lg-8 col-sm-12">
                     <div class="contact-form-right">
                         <h2>GET IN TOUCH</h2>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed odio justo, ultrices ac nisl sed, lobortis porta elit. Fusce in metus ac ex venenatis ultricies at cursus mauris.</p>
+                        <p>You can contact us via email at info@framemingle.com or call us at +123-456-7890. We're also available on social media—connect with us on Facebook, Twitter, and Instagram. Your feedback and inquiries are always welcome!</p>
                         <form id="contactForm" method="post">
                             <div class="row">
                                 <div class="col-md-12">
@@ -70,7 +70,7 @@
 				<div class="col-lg-4 col-sm-12">
                     <div class="contact-info-left">
                         <h2>CONTACT INFO</h2>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent urna diam, maximus ut ullamcorper quis, placerat id eros. Duis semper justo sed condimentum rutrum. Nunc tristique purus turpis. Maecenas vulputate. </p>
+                        <p>We would love to hear from you! Whether you have questions about our products, need assistance with an order, or just want to share your thoughts, please don't hesitate to reach out. </p>
                         <ul>
                             <li>
                                 <p><i class="fas fa-map-marker-alt"></i>Address: Michael I. Days 9000 <br>Preston Street Wichita,<br> KS 87213 </p>

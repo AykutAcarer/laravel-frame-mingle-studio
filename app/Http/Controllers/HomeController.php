@@ -20,9 +20,11 @@ class HomeController extends Controller
         
         $userId = $this->instagramService->getUserId(); // Buraya Instagram kullanıcı ID'sini ekleyin
         $posts = $this->instagramService->getRecentPosts($userId);
-        
+        $products = Product::with('images');
         return view('home',  [
-            'products' => Product::with('images')->get(),
+            'products' => $products->get(),
+            'randomProducts' => $products->inRandomOrder()->take(3)->get(),
+            'canvasproduct' =>$products->find(21),
             'instagramPosts' => $posts
             
         ]);

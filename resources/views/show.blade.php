@@ -220,7 +220,7 @@
                                         </div>
                                         <div class="media-body">
                                             <p>{{$review->reviews_text}}</p>
-                                            <small class="text-muted">Posted by Anonymous on 3/1/18</small>
+                                            <small class="text-muted">Posted by {{$review->name}} on {{$review->created_at}}</small>
                                         </div>
                                         <hr>
                                     </div>

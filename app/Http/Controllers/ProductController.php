@@ -25,7 +25,7 @@ class ProductController extends Controller
         $filters = request()->only(['search']) ?: [];
 
         $productsQuery = Product::with('images')->latest()->filter($filters);
-        $products = $productsQuery->paginate(9);
+        $products = $productsQuery->simplePaginate(9);
         
         $totalProducts = $productsQuery->count();
 

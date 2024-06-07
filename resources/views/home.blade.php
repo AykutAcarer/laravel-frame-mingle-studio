@@ -54,24 +54,19 @@
     <div class="categories-shop">
         <div class="container">
             <div class="row">
-                <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
-                    <div class="shop-cat-box">
-                        <img class="img-fluid" src={{asset('images/categories_img_01.jpg')}} alt="" />
-                        <a class="btn hvr-hover" href="#">Lorem ipsum dolor</a>
+                
+                @foreach($randomProducts as $randomProduct_item)
+                    {{-- //get just first image of each products in order to show product list --}}
+                    @php
+                     $firstImageUrl = isset($randomProduct_item['images'][0]['images_url']) ? $randomProduct_item['images'][0]['images_url'] : null;   
+                    @endphp
+                    <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
+                        <div class="shop-cat-box">
+                            <img class="img-fluid" src={{$firstImageUrl}} alt="" />
+                            <a class="btn hvr-hover" href={{route('products')}}{{'/'.$randomProduct_item->id}}>{{$randomProduct_item->product_name}}</a>
+                        </div>
                     </div>
-                </div>
-                <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
-                    <div class="shop-cat-box">
-                        <img class="img-fluid" src={{asset('images/categories_img_02.jpg')}} alt="" />
-                        <a class="btn hvr-hover" href="#">Lorem ipsum dolor</a>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
-                    <div class="shop-cat-box">
-                        <img class="img-fluid" src={{asset('images/categories_img_03.jpg')}} alt="" />
-                        <a class="btn hvr-hover" href="#">Lorem ipsum dolor</a>
-                    </div>
-                </div>
+                @endforeach
             </div>
         </div>
     </div>
@@ -80,14 +75,20 @@
 	<div class="box-add-products">
 		<div class="container">
 			<div class="row">
+               
+                    {{-- //get just first image of each products in order to show product list --}}
+                    @php
+                     $firstImageUrl = isset($canvasproduct['images'][4]['images_url']) ? $canvasproduct['images'][4]['images_url'] : null;   
+                    @endphp
 				<div class="col-lg-6 col-md-6 col-sm-12">
 					<div class="offer-box-products">
-						<img class="img-fluid" src={{asset('images/add-img-01.jpg')}} alt="" />
+						<img class="img-fluid" src={{ $firstImageUrl}} alt="" />
 					</div>
 				</div>
+                
 				<div class="col-lg-6 col-md-6 col-sm-12">
 					<div class="offer-box-products">
-						<img class="img-fluid" src={{asset('images/add-img-02.jpg')}} alt="" />
+						<img class="img-fluid" src={{ $firstImageUrl}} alt="" />
 					</div>
 				</div>
 			</div>
@@ -147,7 +148,7 @@
     <!-- End Products  -->
 
     <!-- Start Blog  -->
-    <div class="latest-blog">
+    {{-- <div class="latest-blog">
         <div class="container">
             <div class="row">
                 <div class="col-lg-12">
@@ -214,7 +215,7 @@
                 </div>
             </div>
         </div>
-    </div>
+    </div> --}}
     <!-- End Blog  -->
 
     <!-- Start Instagram Feed  -->
