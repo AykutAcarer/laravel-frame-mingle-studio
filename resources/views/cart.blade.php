@@ -145,16 +145,16 @@
                     <div class="modal-dialog">
                         <div class="modal-content">
                             <div class="modal-header">
-                                <h5 class="modal-title" id="exampleModalLabel">Modal Title</h5>
+                                <h5 class="modal-title" id="exampleModalLabel">Information</h5>
                                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                     <span aria-hidden="true">&times;</span>
                                 </button>
                             </div>
                             <div class="modal-body">
-                                This is the content of the modal.
+                                Our website's checkout system is currently being updated. You can access our products at Etsy
                             </div>
                             <div class="modal-footer">
-                                <a href="#" class="btn btn-primary">Action Link</a>
+                                <a href="https://www.etsy.com/de-en/shop/FrameMingleStudio" class="btn btn-primary">Etsy</a>
                                 <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
                             </div>
                         </div>

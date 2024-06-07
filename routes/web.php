@@ -75,6 +75,18 @@ Route::get('/terms', [TermsController::class, 'index'])->name('terms');
 //Show Privacy Policy page
 Route::get('/privacy', [PrivacyController::class, 'index'])->name('privacy');
 
+//Show User Edit Page
+Route::get('/account/{user}', [UserController::class, 'userInfo'])->name('edit');
+
+//Update user information
+Route::put('/account/{user}', [UserController::class, 'update'])->name('users.edit');
+
+//Contact - send mail
+Route::post('/contact', [ContactController::class, 'sendMail'])->name('contact');
+
+
+
+
 
 
 

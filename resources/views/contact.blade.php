@@ -26,7 +26,8 @@
                     <div class="contact-form-right">
                         <h2>GET IN TOUCH</h2>
                         <p>You can contact us via email at info@framemingle.com or call us at +123-456-7890. We're also available on social media—connect with us on Facebook, Twitter, and Instagram. Your feedback and inquiries are always welcome!</p>
-                        <form id="contactForm" method="post">
+                        <form id="contactForm" method="POST" action={{route('users')}}>
+                            @csrf
                             <div class="row">
                                 <div class="col-md-12">
                                     <div class="form-group">
@@ -58,8 +59,8 @@
                                         <div class="help-block with-errors"></div>
                                     </div>
                                     <div class="submit-button text-center">
-                                        <button class="btn hvr-hover" id="submit" type="submit">Send Message</button>
-                                        <!-- <div id="msgSubmit" name="msgSubmit" class="h3 text-center hidden"></div> -->
+                                        <button class="btn hvr-hover">Send Message</button>
+                                     <div id="msgSubmit" name="msgSubmit" class="h3 text-center hidden"></div>
                                         <div class="clearfix"></div>
                                     </div>
                                 </div>
@@ -79,7 +80,7 @@
                                 <p><i class="fas fa-phone-square"></i>Phone: <a href="tel:+1-888705770">+1-888 705 770</a></p>
                             </li> --}}
                             <li>
-                                <p><i class="fas fa-envelope"></i>Email: <a href="mailto:contactinfo@gmail.com">info@frameminglestudio.com</a></p>
+                                <p><i class="fas fa-envelope"></i>Email: <a href="mailto:infoframeminglestudio@gmail.com">infoframeminglestudio@gmail.com</a></p>
                             </li>
                         </ul>
                     </div>

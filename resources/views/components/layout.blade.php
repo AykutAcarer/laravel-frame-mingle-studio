@@ -338,7 +338,7 @@
                                     <p><i class="fas fa-phone-square"></i>Phone: <a href="tel:+1-888705770">+1-888 705 770</a></p>
                                 </li> --}}
                                 <li>
-                                    <p><i class="fas fa-envelope"></i>Email: <a href="mailto:info@frameminglestudio.com">info@frameminglestudio.com</a></p>
+                                    <p><i class="fas fa-envelope"></i>Email: <a href="mailto:infoframeminglestudio@gmail.com">infoframeminglestudio@gmail.com</a></p>
                                 </li>
                             </ul>
                         </div>

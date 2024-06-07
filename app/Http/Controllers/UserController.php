@@ -17,6 +17,17 @@ class UserController extends Controller
     public function showLogin(){
         return view('users.login');
     }
+
+     //Show User Edit Page
+     public function userInfo(User $user){
+
+        // dd('useredit', [
+        //     'user' => $user
+        // ]);
+        return view('users.edit', [
+            'user' => $user
+        ]);
+    }
     
     //create New User
     public function register(Request $request){
@@ -58,7 +69,7 @@ class UserController extends Controller
     }
 
     //Logout
-    public function logout(Request $request){
+    public function logout(Request $request, User $user){
 
         auth()->logout();
 
@@ -66,5 +77,25 @@ class UserController extends Controller
         $request->session()->regenerateToken();
 
         return redirect('/')->with('message', 'You have been logged out');
+    }
+
+    public function update(Request $request, User $user)
+    {
+        $data = $request->validate([
+            'name' => 'required|string|max:255',
+            'email' => 'required|string|email|max:255|unique:users,email,' . $user->id,
+            'password' => 'nullable|string|min:8|confirmed',
+        ]);
+
+        $user->name = $data['name'];
+        $user->email = $data['email'];
+
+        if (!empty($data['password'])) {
+            $user->password = bcrypt($data['password']);
+        }
+
+        $user->save();
+
+        return redirect()->route('users.edit', $user)->with('message', 'User updated successfully');
     }
 }

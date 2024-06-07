@@ -18,30 +18,30 @@
                     </div>
                 </div>
             </li>
-            <!-- <li class="text-center">
-                <img src="template_freshshop/images/banner-02.jpg" alt="">
+            <li class="text-center">
+                <img src="https://i.etsystatic.com/isbl/5876f1/67581128/isbl_1349x480.67581128_rb605aca.jpg?version=0" alt="">
                 <div class="container">
                     <div class="row">
                         <div class="col-md-12">
-                            <h1 class="m-b-20"><strong>Welcome To <br> Freshshop</strong></h1>
+                            {{-- <h1 class="m-b-20"><strong>Welcome To <br> Freshshop</strong></h1>
                             <p class="m-b-40">See how your users experience your website in realtime or view <br> trends to see any changes in performance over time.</p>
-                            <p><a class="btn hvr-hover" href="#">Shop New</a></p>
+                            <p><a class="btn hvr-hover" href="#">Shop New</a></p> --}}
                         </div>
                     </div>
                 </div>
             </li>
             <li class="text-center">
-                <img src="template_freshshop/images/banner-03.jpg" alt="">
+                <img src="https://i.etsystatic.com/isbl/5876f1/67581128/isbl_1349x480.67581128_rb605aca.jpg?version=0" alt="">
                 <div class="container">
                     <div class="row">
                         <div class="col-md-12">
-                            <h1 class="m-b-20"><strong>Welcome To <br> Freshshop</strong></h1>
+                            {{-- <h1 class="m-b-20"><strong>Welcome To <br> Freshshop</strong></h1>
                             <p class="m-b-40">See how your users experience your website in realtime or view <br> trends to see any changes in performance over time.</p>
-                            <p><a class="btn hvr-hover" href="#">Shop New</a></p>
+                            <p><a class="btn hvr-hover" href="#">Shop New</a></p> --}}
                         </div>
                     </div>
                 </div>
-            </li> -->
+            </li>
         </ul>
         <!-- <div class="slides-navigation" >
             <a href="#" class="next" style="background-color: #ed6f21"><i class="fa fa-angle-right" aria-hidden="true"></i></a>
@@ -82,13 +82,13 @@
                     @endphp
 				<div class="col-lg-6 col-md-6 col-sm-12">
 					<div class="offer-box-products">
-						<img class="img-fluid" src={{ $firstImageUrl}} alt="" />
+						<a href={{route('products')}}{{'/'.$canvasproduct->id}} ><img class="img-fluid" src={{ $firstImageUrl}} alt="" /></a>
 					</div>
 				</div>
                 
 				<div class="col-lg-6 col-md-6 col-sm-12">
 					<div class="offer-box-products">
-						<img class="img-fluid" src={{ $firstImageUrl}} alt="" />
+						<a href={{route('products')}}{{'/'.$canvasproduct->id}} ><img class="img-fluid" src={{ $firstImageUrl}} alt="" /></a>
 					</div>
 				</div>
 			</div>
