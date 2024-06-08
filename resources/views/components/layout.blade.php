@@ -148,7 +148,7 @@
                     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-menu" aria-controls="navbars-rs-food" aria-expanded="false" aria-label="Toggle navigation">
                     <i class="fa fa-bars"></i>
                 </button>
-                    <a class="navbar-brand" href="{{route('home')}}"><img src="https://i.etsystatic.com/isla/c30a0d/69076457/isla_180x180.69076457_m35rjrvp.jpg?version=0" class="logo" width="108px"  alt="" ></a>
+                    <a class="navbar-brand" href="{{route('home')}}"><img src="https://i.etsystatic.com/isla/c30a0d/69076457/isla_180x180.69076457_m35rjrvp.jpg?version=0" class="logo img-fluid" style="max-width: 50%; height:auto;"  alt="" ></a>
                 </div>
                 <!-- End Header Navigation -->
 
