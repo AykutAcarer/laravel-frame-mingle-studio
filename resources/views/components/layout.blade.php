@@ -20,7 +20,7 @@
     <link rel="apple-touch-icon" href={{asset('images/apple-touch-icon.png')}}>
 
     <!-- Vite CSS -->
-    {{-- @vite([
+    @vite([
         'resources/css/all.css',
         'resources/css/animate.css',
         'resources/css/baguetteBox.min.css',
@@ -35,17 +35,17 @@
         'resources/css/responsive.css',
         'resources/css/style.css',
         'resources/css/superslides.css'
-    ]) --}}
+    ])
 
 
-    <!-- Bootstrap CSS -->
+    {{-- <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="../resources/css/bootstrap.min.css">
     <!-- Site CSS -->
     <link rel="stylesheet" href="../resources/css/style.css">
     <!-- Responsive CSS -->
     <link rel="stylesheet" href="../resources/css/responsive.css">
     <!-- Custom CSS -->
-    <link rel="stylesheet" href="../resources/css/custom.css">
+    <link rel="stylesheet" href="../resources/css/custom.css"> --}}
 
     <!-- [if lt IE 9]> 
       <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
@@ -363,7 +363,7 @@
    {{-- <script src="{{ asset('js/all.js') }}"></script> --}}
    
    <!-- Vite JS -->
-   {{-- @vite([
+   @vite([
     'resources/js/jquery-3.2.1.min.js',
     'resources/js/popper.min.js',
     'resources/js/bootstrap.min.js',
@@ -381,8 +381,8 @@
     'resources/js/jquery.nicescroll.min.js',
     'resources/js/app.js',
     'resources/js/jquery-ui.js'
-]) --}}
-    <!-- ALL JS FILES -->
+])
+    {{-- <!-- ALL JS FILES -->
     <script src="../resources/js/jquery-3.2.1.min.js"></script>
     <script src="../resources/js/popper.min.js"></script>
     <script src="../resources/js/bootstrap.min.js"></script>
@@ -397,7 +397,7 @@
     <script src="../resources/js/baguetteBox.min.js"></script>
     <script src="../resources/js/form-validator.min.js"></script>
     <script src="../resources/js/contact-form-script.js"></script>
-    <script src="../resources/js/custom.js"></script>
+    <script src="../resources/js/custom.js"></script> --}}
     
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 
