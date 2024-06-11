@@ -44,8 +44,12 @@ class ContactController extends Controller
             'subject' => $request->subject,
             'message' => $request->message,
         ];
-
-        Mail::to('infoframeminglestudio@gmail.com');
+         
+        Mail::send([], [], function ($message) use ($details) {
+            $message->to('infoframeminglestudio@gmail.com')
+                ->subject($details['subject'])
+                ->setBody('<h1>Contact Message</h1><p>From: ' . $details['firstname'] . ' ' . $details['lastname'] . ' (' . $details['email'] . ')</p><p>Message: ' . $details['message'] . '</p>', 'text/html');
+        });
 
         return back()->with('message', 'Your message has been sent successfully!');
     }

@@ -26,7 +26,7 @@
                     <div class="contact-form-right">
                         <h2>GET IN TOUCH</h2>
                         <p>You can contact us via email at info@framemingle.com or call us at +123-456-7890. We're also available on social media—connect with us on Facebook, Twitter, and Instagram. Your feedback and inquiries are always welcome!</p>
-                        <form id="contactForm" method="POST" action={{route('users')}}>
+                        <form id="contactForm" method="POST" action="{{ route('contact') }}">
                             @csrf
                             <div class="row">
                                 <div class="col-md-12">
@@ -43,7 +43,7 @@
                                 </div>
                                 <div class="col-md-12">
                                     <div class="form-group">
-                                        <input type="text" placeholder="Your Email" id="email" class="form-control" name="email" required data-error="Please enter your email">
+                                        <input type="email" placeholder="Your Email" id="email" class="form-control" name="email" required data-error="Please enter your email">
                                         <div class="help-block with-errors"></div>
                                     </div>
                                 </div>
@@ -59,9 +59,7 @@
                                         <div class="help-block with-errors"></div>
                                     </div>
                                     <div class="submit-button text-center">
-                                        <button class="btn hvr-hover">Send Message</button>
-                                     <div id="msgSubmit" name="msgSubmit" class="h3 text-center hidden"></div>
-                                        <div class="clearfix"></div>
+                                        <button type="submit" class="btn hvr-hover">Send Message</button>
                                     </div>
                                 </div>
                             </div>
