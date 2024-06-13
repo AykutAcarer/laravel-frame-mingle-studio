@@ -26,7 +26,7 @@
                     <div class="contact-form-right">
                         <h2>GET IN TOUCH</h2>
                         <p>You can contact us via email at info@framemingle.com or call us at +123-456-7890. We're also available on social media—connect with us on Facebook, Twitter, and Instagram. Your feedback and inquiries are always welcome!</p>
-                        <form id="contactForm" method="POST" action="{{ route('contact') }}">
+                        <form id="contactForm" method="post" action={{ route('contact') }}>
                             @csrf
                             <div class="row">
                                 <div class="col-md-12">
