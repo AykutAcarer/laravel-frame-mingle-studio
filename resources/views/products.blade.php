@@ -145,6 +145,11 @@
                                                                         <li><a href={{route('login')}} data-toggle="tooltip" data-placement="right" title="Add to Wishlist"><i class="far fa-heart"></i></a></li>
                                                                         @endauth
                                                                     </ul>
+                                                                        @auth
+                                                                        <a class="cart" href={{route('cart',['id'=>$product->id])}}>Add to Cart</a>
+                                                                        @else
+                                                                        <a class="cart" href={{route('login')}}>Add to Cart</a>
+                                                                        @endauth
 
                                                                 </div>
                                                             </div>
@@ -155,11 +160,7 @@
                                                             <h4>{{$product->product_name}}</h4>
                                                             <h5 style="color: aliceblue"> <del>${{$product->product_preis_from}}</del> ${{$product->product_preis_now}}</h5>
                                                             <p>{{$product['product_description']}}</p>
-                                                            @auth
-                                                            <a class="btn hvr-hover" href={{route('cart',['id'=>$product->id])}}>Add to Cart</a>
-                                                            @else
-                                                            <a class="cart" href={{route('login')}}>Add to Cart</a>
-                                                            @endauth
+                                                            
                                                         </div>
                                                     </div>
                                                 </div>
