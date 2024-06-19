@@ -26,7 +26,7 @@
                     <div class="contact-form-right">
                         <h2>GET IN TOUCH</h2>
                         <p>You can contact us via email at info@framemingle.com or call us at +123-456-7890. We're also available on social media—connect with us on Facebook, Twitter, and Instagram. Your feedback and inquiries are always welcome!</p>
-                        <form id="contactForm" method="post" action={{ route('contact') }}>
+                        <form id="contactForm" method="POST" action="{{ route('contact') }}">
                             @csrf
                             <div class="row">
                                 <div class="col-md-12">
@@ -55,7 +55,7 @@
                                 </div>
                                 <div class="col-md-12">
                                     <div class="form-group">
-                                        <textarea class="form-control" id="message" name="message" placeholder="Your Message" rows="4" data-error="Write your message" required></textarea>
+                                        <textarea class="form-control" id="message" name="message" placeholder="Your Message" rows="4" required data-error="Write your message"></textarea>
                                         <div class="help-block with-errors"></div>
                                     </div>
                                     <div class="submit-button text-center">
@@ -66,10 +66,10 @@
                         </form>
                     </div>
                 </div>
-				<div class="col-lg-4 col-sm-12">
+                <div class="col-lg-4 col-sm-12">
                     <div class="contact-info-left">
                         <h2>CONTACT INFO</h2>
-                        <p>We would love to hear from you! Whether you have questions about our products, need assistance with an order, or just want to share your thoughts, please don't hesitate to reach out. </p>
+                        <h5>We would love to hear from you! Whether you have questions about our products, need assistance with an order, or just want to share your thoughts, please don't hesitate to reach out.</h5>
                         <ul>
                             {{-- <li>
                                 <p><i class="fas fa-map-marker-alt"></i>Address: Michael I. Days 9000 <br>Preston Street Wichita,<br> KS 87213 </p>
@@ -86,7 +86,7 @@
             </div>
         </div>
     </div>
-    <!-- End Cart -->
+    <!-- End Contact Us -->
 
     <!-- Start Instagram Feed  -->
     <div class="instagram-box">
@@ -96,7 +96,7 @@
                 @if ($post['media_type'] === 'IMAGE' || $post['media_type'] === 'CAROUSEL_ALBUM')
                 <div class="item">
                     <div class="ins-inner-box">
-                        <img src={{ $post['media_url'] }} alt="" />
+                        <img src="{{ $post['media_url'] }}" alt="" />
                         <div class="hov-in">
                             <a href="{{ $post['permalink'] }}"><i class="fab fa-instagram"></i></a>
                         </div>
@@ -107,6 +107,6 @@
            
         </div>
     </div>
-    <!-- End Instagram Feed  -->
+    <!-- End Instagram Feed -->
 
 @endsection

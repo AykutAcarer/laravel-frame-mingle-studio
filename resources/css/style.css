@@ -2369,7 +2369,7 @@
 }
  .contact-info-left{
      padding: 20px;
-     background: url(../../public/images/contact-bg.jpg) no-repeat center;
+     background:  #ed6f21 no-repeat center;
 	 background-size: cover;
 }
  .contact-info-left h2{
