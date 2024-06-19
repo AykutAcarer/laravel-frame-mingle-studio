@@ -61,7 +61,7 @@
                                                 <td class="quantity-box">
                                                     <input type="number" size="4" value="1" min="0" step="1" class="c-input-text qty text" onchange="updateTotal(this,{{$product->product_preis_now}},{{$product->id}})"></td>
                                                 <td class="total-pr">
-                                                    <p id="totalPrice-{{$product->id}}">$ 0</p>
+                                                    <p id="totalPrice-{{$product->id}}">$ {{$product->product_preis_now}}</p>
                                                 </td>
                                                 <form method='post' action={{route('cart', $product->id)}}>
                                                 @csrf
@@ -107,7 +107,7 @@
                     <h3>Order summary</h3>
                         <div class="d-flex">
                             <h4>Sub Total</h4>
-                            <div id="subTotal" class="ml-auto font-weight-bold"> $ 0 </div>
+                            <div id="subTotal" class="ml-auto font-weight-bold"> $0 </div>
                         </div>
                         <!-- <div class="d-flex">
                             <h4>Total</h4>

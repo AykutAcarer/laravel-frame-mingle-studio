@@ -412,27 +412,27 @@
         });
     </script>   
     <script>
+        document.addEventListener('DOMContentLoaded', (event) => {
+            updateAllTotals();
+        });
+    
         function updateTotal(input, pricePerItem, product_id) {
-            // Get the price per item
-            var pricePerItem = pricePerItem;
-            // Get the quantity entered by the user
             var quantity = input.value;
-            // Calculate the total price by multiplying price per item with quantity
             var totalPrice = pricePerItem * quantity;
-            // Update the total price displayed in the HTML
-            document.getElementById("totalPrice-"+product_id).textContent = "$ " + totalPrice.toFixed(2);
-
-            // Calculate subtotal
+            document.getElementById("totalPrice-" + product_id).textContent = "$ " + totalPrice.toFixed(2);
+    
+            updateAllTotals();
+        }
+    
+        function updateAllTotals() {
             var subtotal = 0;
-            $(".total-pr p").each(function() {
-                subtotal += parseFloat($(this).text().replace("$ ", ""));
+            document.querySelectorAll(".total-pr p").forEach(function(element) {
+                subtotal += parseFloat(element.textContent.replace("$ ", ""));
             });
-            $("#subTotal").text("$ " + subtotal.toFixed(2));
+            document.getElementById("subTotal").textContent = "$ " + subtotal.toFixed(2);
             
-            // Calculate grand total (considering discount, tax, shipping, etc.)
             var grandTotal = subtotal;
-            // You can add any additional calculations for discounts, taxes, shipping, etc. here
-            $(".gr-total .h5").text("$ " + grandTotal.toFixed(2));
+            document.querySelector(".gr-total .h5").textContent = "$ " + grandTotal.toFixed(2);
         }
     </script>
 
