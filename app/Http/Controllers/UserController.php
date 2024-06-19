@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Validation\Rule;
+use Illuminate\Support\Facades\Hash;
 
 class UserController extends Controller
 {
@@ -79,6 +80,7 @@ class UserController extends Controller
         return redirect('/')->with('message', 'You have been logged out');
     }
 
+    //Update
     public function update(Request $request, User $user)
     {
         $data = $request->validate([
@@ -97,5 +99,33 @@ class UserController extends Controller
         $user->save();
 
         return redirect()->route('users.edit', $user)->with('message', 'User updated successfully');
+    }
+
+    //Show Remove Page 
+    public function removeAccount(User $user){
+        return view('users.remove', [
+            'user' => $user
+        ]);
+    }
+
+    //Remove User Account
+    public function remove(Request $request, User $user){
+
+        $data = $request->validate([
+            'password' =>'required|confirmed'
+        ]);
+
+        //Check if the provided password matches the user's current password
+        if(Hash::check($data['password'], $user->password)){
+            //Delete the user
+            $user->delete();
+
+            //Redirect with a success messsage
+            return redirect()->route('home')->with('message', 'User Account deleted successfully');
+        }else{
+            return redirect()->back()->withErrors(['password' => 'The password is false']);
+        }
+
+        
     }
 }

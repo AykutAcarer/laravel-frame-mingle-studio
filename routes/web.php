@@ -84,6 +84,11 @@ Route::put('/account/{user}', [UserController::class, 'update'])->name('users.ed
 //Contact - send mail
 Route::post('/contact', [ContactController::class, 'sendMail'])->name('contact');
 
+//Show User Account Remove Page
+Route::get('/remove/{user}', [UserController::class, 'removeAccount'])->name('remove');
+
+//Remove User Account
+Route::post('remove/{user}', [UserController::class, 'remove'])->name('users.remove');
 
 
 

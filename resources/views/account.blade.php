@@ -49,6 +49,19 @@
                             </div>
                         </div>
                     </div>
+                    <div class="col-lg-4 col-md-12">
+                        <div class="account-box">
+                            <div class="service-box">
+                                <div class="service-icon">
+                                    <a href='remove/{{auth()->id()}}'  style="background: red;"><i class="fa fa-trash"></i> </a>
+                                </div>
+                                <div class="service-desc">
+                                    <h4>Delete Account</h4>
+                                    <p>Remove your account</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
